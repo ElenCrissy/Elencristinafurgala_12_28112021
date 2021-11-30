@@ -1,19 +1,20 @@
 import styled from 'styled-components';
-import HorizontalNav from
+import Header from '../../components/Header';
+import VerticalNav from "../../components/VerticalNav";
+import Dashboard from "../../layout/Dashboard";
 
 const HomeWrapper = styled.div`
-  min-width : 1024px;
-  min-height: 780px;
+  width: 100%;
+  height: 100%;
   background-color: #61dafb;
 `
-
 
 function Home () {
     return(
         <HomeWrapper>
-            {/*<HorizontalNav/>*/}
-            {/*<VerticalNav/>*/}
-            {/*<Dashboard/>*/}
+            <Header/>
+            <VerticalNav/>
+            <Dashboard/>
         </HomeWrapper>
 
     )
