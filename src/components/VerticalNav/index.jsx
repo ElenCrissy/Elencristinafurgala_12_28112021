@@ -43,8 +43,8 @@ const Icon = styled.img`
 function VerticalNav() {
     const sports = [yoga, swim, bike, strength]
     const sportsDOMElements = (sports.map((sport, index) => (
-        <IconWrapper>
-            <Icon src={sport} key={index}/>
+        <IconWrapper key={index}>
+            <Icon src={sport}/>
         </IconWrapper>
     )))
 

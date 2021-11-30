@@ -6,15 +6,20 @@ import Dashboard from "../../layout/Dashboard";
 const HomeWrapper = styled.div`
   width: 100%;
   height: 100%;
-  background-color: #61dafb;
+`
+
+const Wrapper = styled.div`
+  display: flex;
 `
 
 function Home () {
     return(
         <HomeWrapper>
             <Header/>
-            <VerticalNav/>
-            <Dashboard/>
+            <Wrapper>
+                <VerticalNav/>
+                <Dashboard/>
+            </Wrapper>
         </HomeWrapper>
 
     )
