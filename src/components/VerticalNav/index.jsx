@@ -21,8 +21,8 @@ const NavContainer = styled.nav`
 `
 
 const IconWrapper = styled.div`
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   background-color: white;
   border-radius: 5px;
   display: flex;
