@@ -1,10 +1,22 @@
 import {useEffect} from "react";
 
 function GetUsers () {
-    useEffect( async () => {
-        const response = await fetch('http://localhost:3000/user/${userId}')
-        const data = await response.json()
-        console.log(JSON.parse(data))
+    let userId
+    useEffect( () => {
+        const url = `http://localhost:3000/user/${userId}`
+        // fetch(url)
+        //     .then(response => response.json())
+        //     .then(data => console.log(data));
+        const fetchData = async () => {
+            try {
+                const response = await fetch(url);
+                const json = await response.json();
+                console.log(json);
+            } catch (error) {
+                console.log("error", error);
+            }
+        };
+        fetchData();
     }, [])
 }
 
