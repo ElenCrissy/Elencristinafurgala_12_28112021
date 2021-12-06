@@ -1,8 +1,13 @@
 import {useEffect, useState} from "react";
 import PropTypes from "prop-types";
+import styled from "styled-components";
 
-const GetUser = () => {
-    const [user, setUser] = useState('yo')
+const HeaderContainer = styled.div`
+  
+`
+
+const GetUserFirstName = () => {
+    const [userFirstName, setUserFirstName] = useState(null)
 
     useEffect(  async () => {
         const url = `http://localhost:3000/user/18`
@@ -11,28 +16,22 @@ const GetUser = () => {
         //     return;
         // }
 
-        // fetch(url)
-        //     .then((response) => response.json())
-        //     .then((data) => {
-        //         console.log(user)
-        //         setUser('hello')
-        //         console.log(data)
-        //         console.log(data.response)
-        //     })
-
         const resp = await fetch(url)
         const data = await resp.json()
-        const userTest = data.data
-        console.log(userTest.id)
-        console.log(user)
-
+        const userTest = data.data.userInfos
+        setUserFirstName(userTest.firstName)
     }, [])
 
-    return <div>{user}</div>
+    return (
+        <HeaderContainer>
+            <h1>Bonjour {userFirstName}</h1>
+            <p>Félicitations ! Vous avez explosé vos objectifs d'hier</p>
+        </HeaderContainer>
+    )
 }
 
 // GetUser.protoTypes = {
 //     userId: PropTypes.number
 // }
 
-export default GetUser
+export default GetUserFirstName

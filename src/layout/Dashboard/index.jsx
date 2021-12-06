@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import DashboardHeader from "../../components/DashboardComponents/DashboardHeader"
-import GetUser from "../../services/users";
+import GetUserFirstName from "../../services/users";
 
 const DashboardContainer = styled.div`
   width: 80%;
@@ -8,13 +8,10 @@ const DashboardContainer = styled.div`
 `
 
 const Dashboard = () => {
-    // const number = () => {
-    //     return Math.floor(Math.random() * 20)
-    // }
     return (
         <DashboardContainer>
             <DashboardHeader/>
-            <GetUser/>
+            <GetUserFirstName/>
             {/*<DailyActivities/>*/}
             <div>
                 {/*<SessionDuration/>*/}
