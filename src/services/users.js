@@ -1,23 +1,25 @@
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 
-function GetUsers () {
-    let userId
+const GetUsers = () => {
+    const [users, setUsers] = useState("")
     useEffect( () => {
-        const url = `http://localhost:3000/user/${userId}`
+        const url = `http://localhost:3000/user/`
         // fetch(url)
         //     .then(response => response.json())
         //     .then(data => console.log(data));
-        const fetchData = async () => {
+        const fetchData = () => {
             try {
-                const response = await fetch(url);
-                const json = await response.json();
-                console.log(json);
+                const response = fetch(url);
+                // const json = response.json();
+                console.log(response.json());
             } catch (error) {
                 console.log("error", error);
             }
         };
         fetchData();
     }, [])
+
+    return <div>{users}</div>
 }
 
 export default GetUsers

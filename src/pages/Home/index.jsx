@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   display: flex;
 `
 
-function Home () {
+const Home = () => {
     return(
         <HomeWrapper>
             <Header/>

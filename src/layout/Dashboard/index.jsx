@@ -7,11 +7,11 @@ const DashboardContainer = styled.div`
   margin-left: 70px;
 `
 
-function Dashboard(){
-    GetUsers()
+const Dashboard = () => {
     return (
         <DashboardContainer>
             <DashboardHeader/>
+            <GetUsers/>
             {/*<DailyActivities/>*/}
             <div>
                 {/*<SessionDuration/>*/}
