@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import DashboardHeader from "../../components/DashboardComponents/DashboardHeader"
-import GetUsers from "../../services/users";
+import GetUser from "../../services/users";
 
 const DashboardContainer = styled.div`
   width: 80%;
@@ -11,7 +11,7 @@ const Dashboard = () => {
     return (
         <DashboardContainer>
             <DashboardHeader/>
-            <GetUsers/>
+            <GetUser userId={}/>
             {/*<DailyActivities/>*/}
             <div>
                 {/*<SessionDuration/>*/}
