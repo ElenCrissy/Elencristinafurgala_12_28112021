@@ -1,37 +1,38 @@
 import {useEffect, useState} from "react";
+import PropTypes from "prop-types";
 
 const GetUser = () => {
-    const [user, setUser] = useState(null)
-    useEffect( () => {
-        const url = `/user/`
+    const [user, setUser] = useState('yo')
+
+    useEffect(  async () => {
+        const url = `http://localhost:3000/user/18`
+
+        // if (userId == null || userId === '') {
+        //     return;
+        // }
+
         // fetch(url)
-        //     .then(response => response.json())
-        //     .then(data => console.log(data));
+        //     .then((response) => response.json())
+        //     .then((data) => {
+        //         console.log(user)
+        //         setUser('hello')
+        //         console.log(data)
+        //         console.log(data.response)
+        //     })
 
-        const { userId } = this.props.match.params
+        const resp = await fetch(url)
+        const data = await resp.json()
+        const userTest = data.data
+        console.log(userTest.id)
+        console.log(user)
 
-        fetch(`http://localhost:3000/user/${userId}`)
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data)
-                console.log(data.response)
-                setUser(data)
-            })
-
-
-        // const fetchData = async () => {
-        //     try {
-        //         const response = await fetch(url);
-        //         const json = await response.json();
-        //         console.log(json);
-        //     } catch (error) {
-        //         console.log("error", error);
-        //     }
-        // };
-        // fetchData().then(r => console.log(r));
     }, [])
 
     return <div>{user}</div>
 }
+
+// GetUser.protoTypes = {
+//     userId: PropTypes.number
+// }
 
 export default GetUser

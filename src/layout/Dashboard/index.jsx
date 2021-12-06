@@ -8,10 +8,13 @@ const DashboardContainer = styled.div`
 `
 
 const Dashboard = () => {
+    // const number = () => {
+    //     return Math.floor(Math.random() * 20)
+    // }
     return (
         <DashboardContainer>
             <DashboardHeader/>
-            <GetUser userId={}/>
+            <GetUser/>
             {/*<DailyActivities/>*/}
             <div>
                 {/*<SessionDuration/>*/}
