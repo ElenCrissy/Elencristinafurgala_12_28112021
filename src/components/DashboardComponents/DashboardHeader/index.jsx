@@ -1,23 +1,29 @@
 import styled from "styled-components";
+import GetUserFirstName from "../../../services/users";
 
-const Title = styled.h1`
-  font-size: 48px;
+const DashboardHeaderContainer = styled.div`
+  h1{
+    font-size: 40px;
+    margin-bottom: auto;
+  }
   span{
-    
+    color: red;
+  }
+  p{
+    font-size: 18px;
+    font-weight: lighter;
   }
 `
 
 
 function DashboardHeader(){
+    const name = GetUserFirstName()
 
     return (
-        null
-        // <div>
-        //     {firstNames.map((firstName, index) => (
-        //     <Title key={index}>Bonjour {firstName}</Title>
-        //     ))
-        // }
-        // </div>
+        <DashboardHeaderContainer>
+            <h1>Bonjour <span>{name}</span></h1>
+            <p>Félicitations ! Vous avez explosé vos objectifs d'hier</p>
+        </DashboardHeaderContainer>
     )
 }
 

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import logo from "../../assets/logo.png";
 
 
-const HeaderContainer = styled.div`
+const HorizontalNavContainer = styled.div`
   width: 100%;
   height: 80px;
   background-color: black;
@@ -16,7 +16,7 @@ const Logo = styled.img`
   margin-left: 20px;
 `
 
-const NavContainer = styled.div`
+const HorizontalNavWrapper = styled.div`
   width: 80%;
   display: flex;
   justify-content: space-around;
@@ -27,18 +27,18 @@ const NavElement = styled.div`
   color: white;
 `
 
-function Header() {
+function HorizontalNav() {
     return(
-        <HeaderContainer>
+        <HorizontalNavContainer>
             <Logo src={logo} alt="" className="logo"/>
-            <NavContainer>
+            <HorizontalNavWrapper>
                 <NavElement>Accueil</NavElement>
                 <NavElement>Profil</NavElement>
                 <NavElement>Réglages</NavElement>
                 <NavElement>Communauté</NavElement>
-            </NavContainer>
-        </HeaderContainer>
+            </HorizontalNavWrapper>
+        </HorizontalNavContainer>
     )
 }
 
-export default Header;
+export default HorizontalNav;

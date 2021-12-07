@@ -13,7 +13,7 @@ const VerticalNavContainer = styled.div`
   background-color: black;
 `
 
-const NavContainer = styled.nav`
+const VerticalNavWrapper = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -50,9 +50,9 @@ function VerticalNav() {
 
  return (
      <VerticalNavContainer>
-      <NavContainer>
+      <VerticalNavWrapper>
           {sportsDOMElements}
-      </NavContainer>
+      </VerticalNavWrapper>
      </VerticalNavContainer>
  )
 }

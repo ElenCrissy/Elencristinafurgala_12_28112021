@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import Header from '../../components/Header';
 import VerticalNav from "../../components/VerticalNav";
 import Dashboard from "../../layout/Dashboard";
+import HorizontalNav from "../../components/HorizontalNav";
 
 const HomeWrapper = styled.div`
   width: 100%;
@@ -15,7 +15,7 @@ const Wrapper = styled.div`
 const Home = () => {
     return(
         <HomeWrapper>
-            <Header/>
+            <HorizontalNav/>
             <Wrapper>
                 <VerticalNav/>
                 <Dashboard/>
