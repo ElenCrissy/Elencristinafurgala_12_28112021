@@ -12,6 +12,8 @@ const DashboardContainer = styled.div`
 
 const DetailsContainer = styled.section`
   width: 80%;
+  display: flex;
+  justify-content: space-between;
 `
 
 const Graphics = styled.div`
