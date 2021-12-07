@@ -2,39 +2,56 @@ import styled from 'styled-components';
 import DashboardHeader from "../../components/DashboardComponents/DashboardHeader";
 import KpiInfos from "../../components/DashboardComponents/Kpi/kpiInfos"
 import GetKpi from "../../services/kpi";
+import GetPerf from "../../services/performance";
+import DailyActivities from "../../components/DashboardComponents/DailyActivities";
 
 const DashboardContainer = styled.div`
   width: 80%;
   margin-left: 70px;
 `
 
+const DetailsContainer = styled.section`
+  width: 80%;
+`
+
+const Graphics = styled.div`
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+`
+
 const Kpi = styled.div`
-  width: 300px;
-height: 100%;
+  width: 20%;
+  height: 100%;
 `
 
 const Dashboard = () => {
    const kpi = GetKpi()
-    let hi =[]
-   for(let el in kpi){
-       const yo = el
-       const ya = kpi[el]
-       const yi = (<KpiInfos element={yo} number={ya}/>)
-       hi.push(yi)
+    let kpiDOMArray =[]
+   for(let i in kpi){
+       const name = i
+       const value = kpi[i]
+       const kpiDOM = (<KpiInfos kpiName={name} kpiValue={value}/>)
+       kpiDOMArray.push(kpiDOM)
    }
+   const perf = GetPerf()
 
     return (
         <DashboardContainer>
             <DashboardHeader/>
-            {/*<DailyActivities/>*/}
-            <div>
-                {/*<SessionDuration/>*/}
-                {/*<Radar/>*/}
-                {/*<Score/>*/}
-            </div>
-            <Kpi>
-                {hi}
-            </Kpi>
+            <DetailsContainer>
+                <Graphics>
+                    <DailyActivities data={perf}/>
+                    <div>
+                        {/*<SessionDuration/>*/}
+                        {/*<Radar/>*/}
+                        {/*<Score/>*/}
+                    </div>
+                </Graphics>
+                <Kpi>
+                    {kpiDOMArray}
+                </Kpi>
+            </DetailsContainer>
         </DashboardContainer>
     )
 }

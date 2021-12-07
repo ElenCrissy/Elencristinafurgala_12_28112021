@@ -9,9 +9,22 @@ import {
     CartesianGrid
 } from "recharts";
 
-function DailyActivities(){
+const DailyActivities = (props) => {
+    const data = props.data
+    console.log(data)
+
     return(
-        null
+        <ResponsiveContainer width="100%" height={400}>
+            <AreaChart data={props}>
+                <Area dataKey="calories"/>
+                <XAxis dataKey="day"/>
+                <YAxis dataKey="kilograms"/>
+                <Tooltip/>
+                <CartesianGrid/>
+            </AreaChart>
+
+
+        </ResponsiveContainer>
     )
 }
 

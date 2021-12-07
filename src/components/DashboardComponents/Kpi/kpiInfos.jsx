@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import GetKpi from "../../../services/kpi";
 
 const KpiContainer = styled.div`
   width: 200px;
@@ -18,7 +17,8 @@ const KpiInfos = (props) => {
         <KpiContainer>
             <img alt=""/>
             <KpiWrapper>
-                Hello
+                <p>{props.kpiName}</p>
+                <p>{props.kpiValue}</p>
             </KpiWrapper>
         </KpiContainer>
     )
