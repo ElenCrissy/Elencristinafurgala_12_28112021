@@ -14,7 +14,7 @@ const DailyActivities = (props) => {
 
     return(
         <ResponsiveContainer width="100%" height={400}>
-            <AreaChart data={props}>
+            <AreaChart data={props.data}>
                 <Area dataKey="calories"/>
                 <XAxis dataKey="day"/>
                 <YAxis dataKey="kilograms"/>

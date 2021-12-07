@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import DashboardHeader from "../../components/DashboardComponents/DashboardHeader";
 import KpiInfos from "../../components/DashboardComponents/Kpi/kpiInfos"
 import GetKpi from "../../services/kpi";
-import GetPerf from "../../services/performance";
+import usePerf from "../../services/performance";
 import DailyActivities from "../../components/DashboardComponents/DailyActivities";
 
 const DashboardContainer = styled.div`
@@ -36,7 +36,7 @@ const Dashboard = () => {
        const kpiDOM = (<KpiInfos kpiName={name} kpiValue={value}/>)
        kpiDOMArray.push(kpiDOM)
    }
-   const perf = GetPerf()
+   const perf = usePerf()
 
     return (
         <DashboardContainer>

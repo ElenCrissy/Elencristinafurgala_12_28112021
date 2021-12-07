@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import GetUserFirstName from "../../../services/users";
+import useUserFirstName from "../../../services/users";
 
 const DashboardHeaderContainer = styled.div`
   h1{
@@ -17,7 +17,7 @@ const DashboardHeaderContainer = styled.div`
 
 
 function DashboardHeader(){
-    const name = GetUserFirstName()
+    const name = useUserFirstName()
 
     return (
         <DashboardHeaderContainer>

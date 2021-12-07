@@ -1,14 +1,10 @@
 import {useEffect, useState} from "react";
 
-const GetUserFirstName = () => {
+const useUserFirstName = () => {
     const [userFirstName, setUserFirstName] = useState(null)
 
     useEffect(  async () => {
         const url = `http://localhost:3000/user/18`
-
-        // if (userId == null || userId === '') {
-        //     return;
-        // }
 
         const resp = await fetch(url)
         const data = await resp.json()
@@ -20,4 +16,4 @@ const GetUserFirstName = () => {
     return userFirstName
 }
 
-export default GetUserFirstName
+export default useUserFirstName

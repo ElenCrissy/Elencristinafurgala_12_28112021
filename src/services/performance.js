@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 
-const GetPerf = () => {
+const usePerf = () => {
     const [perf, setPerf] = useState([])
 
     useEffect(  async () => {
@@ -15,4 +15,4 @@ const GetPerf = () => {
     return perf
 }
 
-export default GetPerf
+export default usePerf
