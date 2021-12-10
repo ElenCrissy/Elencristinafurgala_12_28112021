@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 
-const GetKpi = () => {
+const useKpi = () => {
     const [kpi, setKpi] = useState([])
 
     useEffect(  async () => {
@@ -15,4 +15,4 @@ const GetKpi = () => {
     return kpi
 }
 
-export default GetKpi
+export default useKpi
