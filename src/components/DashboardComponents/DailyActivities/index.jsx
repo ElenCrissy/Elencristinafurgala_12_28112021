@@ -18,8 +18,8 @@ const DailyActivities = (props) => {
         <ResponsiveContainer
             width="100%"
             height={250}
-            height={400}>
-            <BarChart width={730} height={250} data={data}
+            >
+            <BarChart width={730} height="100%" data={data}
                       padding={20}
                       fill="#FBFBFB"
                       radius={[25, 25, 0, 0]}>
@@ -28,8 +28,8 @@ const DailyActivities = (props) => {
                 <YAxis dataKey="kilogram" orientation="right"/>
                 <Tooltip cursor={{fill: "rgba(196, 196, 196, 0.5)"}}/>
                 <Legend verticalAlign="top" height={36}/>
-                <Bar dataKey="kilogram" fill="#282D30" radius={5} width={7}/>
-                <Bar dataKey="calories" fill="#E60000" radius={5} width={7}/>
+                <Bar dataKey="kilogram" fill="#282D30" radius={[5, 5, 0, 0]} barSize={7}/>
+                <Bar dataKey="calories" fill="#E60000" radius={[5, 5, 0, 0]} barSize={7}/>
             </BarChart>
 
 
