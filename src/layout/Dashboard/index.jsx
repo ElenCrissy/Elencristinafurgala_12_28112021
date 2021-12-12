@@ -3,7 +3,7 @@ import DashboardHeader from "../../components/DashboardComponents/DashboardHeade
 import KpiInfos from "../../components/DashboardComponents/Kpi/kpiInfos"
 import useKpi from "../../services/kpi";
 import usePerf from "../../services/performance";
-import DailyActivities from "../../components/DashboardComponents/DailyActivities";
+import DailyInfo from "../../components/DashboardComponents/DailyActivities";
 
 const DashboardContainer = styled.div`
   width: 80%;
@@ -17,7 +17,7 @@ const DetailsContainer = styled.section`
 `
 
 const Graphics = styled.div`
-    width: 70%;
+    width: 100%;
     display: flex;
     flex-direction: column;
 `
@@ -43,7 +43,7 @@ const Dashboard = () => {
             <DashboardHeader/>
             <DetailsContainer>
                 <Graphics>
-                    <DailyActivities data={perf}/>
+                    <DailyInfo data={perf}/>
                     <div>
                         {/*<SessionDuration/>*/}
                         {/*<Radar/>*/}
