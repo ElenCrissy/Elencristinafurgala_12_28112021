@@ -37,18 +37,17 @@ const CustomTooltip = (active, calories, weight) => {
 const DailyInfo= (props) => {
     const data = props.data
     const dataIndex = Array.from(data.keys())
-    // console.log(data)
     return(
         <DailyInfoChart>
             <p>Activité quotidienne</p>
             <ResponsiveContainer
                 width="100%"
                 height="100%"
-                >
+                radius={5}
+            >
                 <BarChart width="90%" height="100%" data={data}
                           padding={20}
-                          fill="#FBFBFB"
-                          radius={[25, 25, 0, 0]}>
+                          style={{background: "#FBFBFB"}}>
                     <CartesianGrid strokeDasharray="3 3" vertical={false}/>
                     <XAxis data={dataIndex}/>
                     <YAxis dataKey="kilogram" orientation="right" height={700} domain={[65, 75]}/>

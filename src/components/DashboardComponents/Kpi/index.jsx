@@ -6,7 +6,7 @@ import lipids from "../../../assets/cheeseburger.svg";
 
 
 const KpiContainer = styled.div`
-  width: 160px;
+  width: 100%;
   height: 70px;
   background-color: #FBFBFB;
   border-radius: 5px;

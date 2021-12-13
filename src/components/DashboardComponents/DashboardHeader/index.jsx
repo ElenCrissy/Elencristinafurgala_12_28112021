@@ -3,8 +3,9 @@ import useUserFirstName from "../../../services/users";
 
 const DashboardHeaderContainer = styled.div`
   h1{
-    font-size: 40px;
+    font-size: 35px;
     margin-bottom: auto;
+    margin-top: 30px;
   }
   span{
     color: red;
