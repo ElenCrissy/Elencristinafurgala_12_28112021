@@ -13,6 +13,9 @@ import {
 const DailyInfoChart = styled.div`
   width: 100%;
   height: 300px;
+  p{
+    font-weight: bold;
+  }
 `
 
 const StyledTooltip = styled.div`
@@ -21,7 +24,7 @@ const StyledTooltip = styled.div`
 
 const CustomTooltip = (active, calories, weight) => {
     if(active) {
-        console.log(weight)
+        // console.log(weight)
         return (
             <StyledTooltip>
 
@@ -35,7 +38,6 @@ const DailyInfo= (props) => {
     const data = props.data
     const dataIndex = Array.from(data.keys())
     console.log(data)
-
     return(
         <DailyInfoChart>
             <p>Activité quotidienne</p>
@@ -48,8 +50,8 @@ const DailyInfo= (props) => {
                           fill="#FBFBFB"
                           radius={[25, 25, 0, 0]}>
                     <CartesianGrid strokeDasharray="3 3" vertical={false}/>
-                    <XAxis data={dataIndex} />
-                    <YAxis dataKey="kilogram" orientation="right"/>
+                    <XAxis data={dataIndex}/>
+                    <YAxis dataKey="kilogram" orientation="right" height={700} domain={[65, 75]}/>
                     <Tooltip cursor={{fill: "rgba(196, 196, 196, 0.5)"}} content={<CustomTooltip/>}/>
                     <Legend verticalAlign="top" height={36}/>
                     <Bar dataKey="kilogram" fill="#282D30" radius={[5, 5, 0, 0]} barSize={7}/>

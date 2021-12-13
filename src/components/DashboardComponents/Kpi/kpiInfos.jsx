@@ -41,9 +41,6 @@ const KpiWrapper = styled.div`
 `
 
 const KpiInfos = (props) => {
-    console.log(props.kpiName)
-
-
     return(
         <KpiContainer>
             {props.kpiName === "calorieCount" ? (<img src={calories} alt="" style={{background: "rgb(255, 0, 0, 0.1)"}}/>) : null}
