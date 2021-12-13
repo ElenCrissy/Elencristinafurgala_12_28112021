@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 import DashboardHeader from "../../components/DashboardComponents/DashboardHeader";
-import KpiInfos from "../../components/DashboardComponents/Kpi/kpiInfos"
+import Index from "../../components/DashboardComponents/Kpi"
 import useKpi from "../../services/kpi";
+import useActivity from "../../services/activity";
 import usePerf from "../../services/performance";
 import DailyInfo from "../../components/DashboardComponents/DailyActivities";
+import RadarGraph from "../../components/DashboardComponents/Radar";
 
 const DashboardContainer = styled.div`
   width: 80%;
@@ -33,20 +35,19 @@ const Dashboard = () => {
    for(let i in kpi){
        const name = i
        const value = kpi[i]
-       const kpiDOM = (<KpiInfos kpiName={name} kpiValue={value}/>)
+       const kpiDOM = (<Index kpiName={name} kpiValue={value}/>)
        kpiDOMArray.push(kpiDOM)
    }
-   const perf = usePerf()
 
     return (
         <DashboardContainer>
             <DashboardHeader/>
             <DetailsContainer>
                 <Graphics>
-                    <DailyInfo data={perf}/>
+                    <DailyInfo data={useActivity()}/>
                     <div>
                         {/*<SessionDuration/>*/}
-                        {/*<Radar/>*/}
+                        <RadarGraph data={usePerf()}/>
                         {/*<Score/>*/}
                     </div>
                 </Graphics>

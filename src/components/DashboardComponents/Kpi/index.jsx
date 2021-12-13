@@ -40,7 +40,7 @@ const KpiWrapper = styled.div`
   }
 `
 
-const KpiInfos = (props) => {
+const Index = (props) => {
     return(
         <KpiContainer>
             {props.kpiName === "calorieCount" ? (<img src={calories} alt="" style={{background: "rgb(255, 0, 0, 0.1)"}}/>) : null}
@@ -62,4 +62,4 @@ const KpiInfos = (props) => {
 
 }
 
-export default KpiInfos
+export default Index

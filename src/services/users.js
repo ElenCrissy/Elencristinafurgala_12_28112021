@@ -8,8 +8,8 @@ const useUserFirstName = () => {
 
         const resp = await fetch(url)
         const data = await resp.json()
-        const userTest = data.data.userInfos
-        setUserFirstName(userTest.firstName)
+        const userData = data.data.userInfos
+        setUserFirstName(userData.firstName)
 
     }, [])
 

@@ -37,7 +37,7 @@ const CustomTooltip = (active, calories, weight) => {
 const DailyInfo= (props) => {
     const data = props.data
     const dataIndex = Array.from(data.keys())
-    console.log(data)
+    // console.log(data)
     return(
         <DailyInfoChart>
             <p>Activité quotidienne</p>
