@@ -12,13 +12,17 @@ const Wrapper = styled.div`
   display: flex;
 `
 
+const getUserId = () => {
+    return 18
+}
+
 const Home = () => {
     return(
         <HomeWrapper>
             <HorizontalNav/>
             <Wrapper>
                 <VerticalNav/>
-                <Dashboard/>
+                <Dashboard userId={getUserId()}/>
             </Wrapper>
         </HomeWrapper>
 

@@ -37,6 +37,15 @@ const CustomTooltip = (active, calories, weight) => {
 const DailyInfo= (props) => {
     const data = props.data
     const dataIndex = Array.from(data.keys())
+    // console.log(data)
+    // data.forEach(el => {
+    //     let val = el.calories
+    //     val = val/0.5
+    //     console.log(val)
+    //     el.calories = val
+    //     return el.calories
+    // })
+    // console.log(data)
 
     return(
         <DailyInfoChart>
@@ -60,17 +69,29 @@ const DailyInfo= (props) => {
                         domain={[65, 75]}
                         axisLine={false}
                         tickLine={false}/>
+                    <YAxis
+                        dataKey="calories"
+                        height={700}
+                        orientation="left"
+                        domain={[65, 75]}
+                        axisLine={false}
+                        tickLine={false}
+                        />
                     <Tooltip cursor={{fill: "rgba(196, 196, 196, 0.5)"}} content={<CustomTooltip/>}/>
-                    <Legend verticalAlign="top" height={36}/>
+                    <Legend
+                        verticalAlign="top"
+                        height={36}
+                        iconType={"circle"}
+                        iconSize={7}/>
                     <Bar
                         dataKey="kilogram"
-                        name="Poids"
+                        name="Poids (kg)"
                         fill="#282D30"
                         radius={[5, 5, 0, 0]}
                         barSize={7}/>
                     <Bar
                         dataKey="calories"
-                        name="Calories"
+                        name="Calories (kCal)"
                         fill="#E60000"
                         radius={[5, 5, 0, 0]}
                         barSize={7}/>

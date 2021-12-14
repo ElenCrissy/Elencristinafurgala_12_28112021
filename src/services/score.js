@@ -1,18 +1,19 @@
 import {useEffect, useState} from "react";
 
-const useKpi = (userId) => {
-    const [kpi, setKpi] = useState([])
+const useScore = (userId) => {
+    const [score, setScore] = useState(null)
 
     useEffect(  async () => {
         const url = `http://localhost:3000/user/${userId}`
+
         const resp = await fetch(url)
         const data = await resp.json()
-        const kpiTest = data.data.keyData
-        setKpi(kpiTest)
+        const userData = data.data
+        setScore(userData)
 
     }, [])
 
-    return kpi
+    return score
 }
 
-export default useKpi
+export default useScore

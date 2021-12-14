@@ -5,9 +5,11 @@ import useKpi from "../../services/kpi";
 import useActivity from "../../services/activity";
 import usePerf from "../../services/performance";
 import useSessions from "../../services/sessions";
+import useScore from "../../services/score";
 import DailyInfo from "../../components/DashboardComponents/DailyActivities";
 import SessionDuration from "../../components/DashboardComponents/SessionDuration";
 import RadarGraph from "../../components/DashboardComponents/Radar";
+import Score from "../../components/DashboardComponents/Score";
 
 const DashboardContainer = styled.div`
   width: 80%;
@@ -36,8 +38,8 @@ const Kpi = styled.div`
   height: 100%;
 `
 
-const Dashboard = () => {
-   const kpi = useKpi()
+const Dashboard = (props) => {
+   const kpi = useKpi(props.userId)
     let kpiDOMArray =[]
    for(let i in kpi){
        const name = i
@@ -48,14 +50,14 @@ const Dashboard = () => {
 
     return (
         <DashboardContainer>
-            <DashboardHeader/>
+            <DashboardHeader userId={props.userId}/>
             <DetailsContainer>
                 <Graphs>
-                    <DailyInfo data={useActivity()}/>
+                    <DailyInfo data={useActivity(props.userId)}/>
                     <SmallGraphs>
-                        <SessionDuration data={useSessions()}/>
-                        <RadarGraph data={usePerf()}/>
-                        {/*<Score/>*/}
+                        <SessionDuration data={useSessions(props.userId)}/>
+                        <RadarGraph data={usePerf(props.userId)}/>
+                        <Score data={useScore(props.userId)}/>
                     </SmallGraphs>
                 </Graphs>
                 <Kpi>

@@ -17,8 +17,8 @@ const DashboardHeaderContainer = styled.div`
 `
 
 
-function DashboardHeader(){
-    const name = useUserFirstName()
+const DashboardHeader = (props) => {
+    const name = useUserFirstName(props.userId)
 
     return (
         <DashboardHeaderContainer>
