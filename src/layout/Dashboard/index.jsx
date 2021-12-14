@@ -20,10 +20,15 @@ const DetailsContainer = styled.section`
   justify-content: space-between;
 `
 
-const Graphics = styled.div`
+const Graphs = styled.div`
     width: 80%;
     display: flex;
     flex-direction: column;
+`
+
+const SmallGraphs = styled.div`
+  display: flex;
+  justify-content: space-between;
 `
 
 const Kpi = styled.div`
@@ -45,14 +50,14 @@ const Dashboard = () => {
         <DashboardContainer>
             <DashboardHeader/>
             <DetailsContainer>
-                <Graphics>
+                <Graphs>
                     <DailyInfo data={useActivity()}/>
-                    <div>
+                    <SmallGraphs>
                         <SessionDuration data={useSessions()}/>
                         <RadarGraph data={usePerf()}/>
                         {/*<Score/>*/}
-                    </div>
-                </Graphics>
+                    </SmallGraphs>
+                </Graphs>
                 <Kpi>
                     {kpiDOMArray}
                 </Kpi>

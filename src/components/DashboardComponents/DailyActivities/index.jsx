@@ -37,24 +37,43 @@ const CustomTooltip = (active, calories, weight) => {
 const DailyInfo= (props) => {
     const data = props.data
     const dataIndex = Array.from(data.keys())
+
     return(
         <DailyInfoChart>
             <p>Activité quotidienne</p>
             <ResponsiveContainer
                 width="100%"
-                height="100%"
+                height="80%"
                 radius={5}
             >
                 <BarChart width="90%" height="100%" data={data}
                           padding={20}
                           style={{background: "#FBFBFB"}}>
                     <CartesianGrid strokeDasharray="3 3" vertical={false}/>
-                    <XAxis data={dataIndex}/>
-                    <YAxis dataKey="kilogram" orientation="right" height={700} domain={[65, 75]}/>
+                    <XAxis data={dataIndex}
+                           tickLine={false}
+                           tickFormatter={(number) => `${number+1}`}/>
+                    <YAxis
+                        dataKey="kilogram"
+                        orientation="right"
+                        height={700}
+                        domain={[65, 75]}
+                        axisLine={false}
+                        tickLine={false}/>
                     <Tooltip cursor={{fill: "rgba(196, 196, 196, 0.5)"}} content={<CustomTooltip/>}/>
                     <Legend verticalAlign="top" height={36}/>
-                    <Bar dataKey="kilogram" fill="#282D30" radius={[5, 5, 0, 0]} barSize={7}/>
-                    <Bar dataKey="calories" fill="#E60000" radius={[5, 5, 0, 0]} barSize={7}/>
+                    <Bar
+                        dataKey="kilogram"
+                        name="Poids"
+                        fill="#282D30"
+                        radius={[5, 5, 0, 0]}
+                        barSize={7}/>
+                    <Bar
+                        dataKey="calories"
+                        name="Calories"
+                        fill="#E60000"
+                        radius={[5, 5, 0, 0]}
+                        barSize={7}/>
                 </BarChart>
 
 

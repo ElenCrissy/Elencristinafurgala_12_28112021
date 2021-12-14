@@ -36,7 +36,7 @@ const RadarGraph = (props) => {
             <PolarGrid />
             <PolarAngleAxis dataKey="kind" style={{color: "white"}}/>
             <PolarRadiusAxis dataKey="value" angle={30}/>
-            <Radar dataKey="value" fill="#FF0101" fillOpacity={0.7} />
+            <Radar dataKey="value" legendType={"none"} fill="#FF0101" fillOpacity={0.7} />
             <Legend />
         </RadarChart>
     )
