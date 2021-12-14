@@ -4,7 +4,6 @@ import proteins from "../../../assets/chicken.svg";
 import carbohydrates from "../../../assets/apple.svg";
 import lipids from "../../../assets/cheeseburger.svg";
 
-
 const KpiContainer = styled.div`
   width: 100%;
   height: 70px;

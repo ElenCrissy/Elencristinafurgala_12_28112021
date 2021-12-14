@@ -63,19 +63,20 @@ const DailyInfo= (props) => {
                            tickLine={false}
                            tickFormatter={(number) => `${number+1}`}/>
                     <YAxis
+                        yAxisId={"kilo"}
                         dataKey="kilogram"
                         orientation="right"
                         height={700}
-                        domain={[65, 75]}
                         axisLine={false}
                         tickLine={false}/>
                     <YAxis
+                        yAxisId={"calo"}
                         dataKey="calories"
                         height={700}
                         orientation="left"
-                        domain={[65, 75]}
                         axisLine={false}
                         tickLine={false}
+                        hide={true}
                         />
                     <Tooltip cursor={{fill: "rgba(196, 196, 196, 0.5)"}} content={<CustomTooltip/>}/>
                     <Legend
@@ -84,20 +85,20 @@ const DailyInfo= (props) => {
                         iconType={"circle"}
                         iconSize={7}/>
                     <Bar
+                        yAxisId={"kilo"}
                         dataKey="kilogram"
                         name="Poids (kg)"
                         fill="#282D30"
                         radius={[5, 5, 0, 0]}
                         barSize={7}/>
                     <Bar
+                        yAxisId={"calo"}
                         dataKey="calories"
                         name="Calories (kCal)"
                         fill="#E60000"
                         radius={[5, 5, 0, 0]}
                         barSize={7}/>
                 </BarChart>
-
-
             </ResponsiveContainer>
         </DailyInfoChart>
     )

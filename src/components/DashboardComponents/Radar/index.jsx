@@ -7,7 +7,7 @@ import {
     PolarRadiusAxis,
     Radar,
     Legend,
-    Label
+    LabelList
 } from "recharts";
 
 const RadarGraph = (props) => {
@@ -33,13 +33,10 @@ const RadarGraph = (props) => {
             width={200}
             height={200}
             data={perfValues}
-            style={{background: "#282D30", radius:"5px"}}
-            // radius={[5, 5, 5 ,5]}
+            style={{background: "#282D30", borderRadius:"5px", fill:"#FFF"}}
         >
-            <PolarGrid />
-            <PolarAngleAxis dataKey="kind" >
-                <Label style={{color: "white"}}></Label>
-            </PolarAngleAxis>
+            <PolarGrid radialLines={false}/>
+            <PolarAngleAxis dataKey="kind"/>
             <PolarRadiusAxis dataKey="value" angle={"none"}/>
             <Radar dataKey="value" legendType={"none"} fill="#FF0101" fillOpacity={0.7}/>
             <Legend/>
