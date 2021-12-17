@@ -18,9 +18,26 @@ const RadarGraph = (props) => {
     if(perfValues !== undefined) {
         perfValues.map(perfValue => {
             for (let i in kinds) {
-                const upperCasedKind = kinds[i][0].toUpperCase() + kinds[i].slice(1);
                 if(i == perfValue.kind){
-                    perfValue.kind = upperCasedKind
+                    perfValue.kind = kinds[i]
+                    if(perfValue.kind === "strength"){
+                        perfValue.kind = "Force"
+                    }
+                    if(perfValue.kind === "cardio"){
+                        perfValue.kind = "Cardio"
+                    }
+                    if(perfValue.kind === "endurance"){
+                        perfValue.kind = "Endurance"
+                    }
+                    if(perfValue.kind === "speed"){
+                        perfValue.kind = "Vitesse"
+                    }
+                    if(perfValue.kind === "energy"){
+                        perfValue.kind = "Energie"
+                    }
+                    if(perfValue.kind === "intensity"){
+                        perfValue.kind = "Intensité"
+                    }
                 }
             }
             return perfValues
@@ -29,17 +46,16 @@ const RadarGraph = (props) => {
 
     return (
         <RadarChart
-            outerRadius={90}
+            outerRadius={60}
             width={200}
             height={200}
             data={perfValues}
             style={{background: "#282D30", borderRadius:"5px", fill:"#FFF"}}
         >
             <PolarGrid radialLines={false}/>
-            <PolarAngleAxis dataKey="kind"/>
+            <PolarAngleAxis dataKey="kind" style={{fontSize: "12px"}}/>
             <PolarRadiusAxis dataKey="value" angle={"none"}/>
             <Radar dataKey="value" legendType={"none"} fill="#FF0101" fillOpacity={0.7}/>
-            <Legend/>
         </RadarChart>
     )
 }

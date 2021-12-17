@@ -20,7 +20,6 @@ const ScoreContainer = styled.div`
 `
 
 const Score = (props) => {
-console.log(props.data)
     return(
         <ScoreContainer>
             <p>Score</p>
@@ -32,7 +31,7 @@ console.log(props.data)
                 data={props.data}
                 startAngle={180}
                 endAngle={0}
-                style={{background:"#FBFBFB"}}
+                style={{background:"#FBFBFB", borderRadius:"5px"}}
             >
                 <RadialBar minAngle={15} label={{ fill: 'black', position: 'insideStart' }} background clockWise={true} dataKey='score' />
                 {/*<Legend iconSize={10} width={120} height={140} layout='vertical' verticalAlign='middle' align="right" />*/}

@@ -19,10 +19,8 @@ const Sessions = styled.div`
     opacity: 0.5;
   }
 `
-
 const SessionDuration = (props) => {
     const data = props.data.sessions
-    console.log(data)
     return(
         <Sessions>
             <p>Durée des sessions</p>
@@ -31,7 +29,7 @@ const SessionDuration = (props) => {
                        data={data}
                        margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
                        radius={5}
-                       style={{background: "#FF0000", position:"relative"}}>
+                       style={{background: "#FF0000", borderRadius:"5px", position:"relative"}}>
                 <defs>
                     <linearGradient id="colorLine" x1="0" y1="0" x2="0" y2="1">
                         <stop offset="5%" stopColor="white" stopOpacity={0.8}/>

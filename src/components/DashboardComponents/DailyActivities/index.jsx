@@ -57,11 +57,14 @@ const DailyInfo= (props) => {
             >
                 <BarChart width="90%" height="100%" data={data}
                           padding={20}
-                          style={{background: "#FBFBFB"}}>
+                          style={{background: "#FBFBFB", borderRadius:"5px"}}>
                     <CartesianGrid strokeDasharray="3 3" vertical={false}/>
                     <XAxis data={dataIndex}
                            tickLine={false}
-                           tickFormatter={(number) => `${number+1}`}/>
+                           tickFormatter={(number) => `${number+1}`}
+                           scale="point"
+                           padding={{ left: 9, right: 9 }}
+                    />
                     <YAxis
                         yAxisId={"kilo"}
                         dataKey="kilogram"
