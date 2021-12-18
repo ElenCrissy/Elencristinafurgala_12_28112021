@@ -34,7 +34,7 @@ const SmallGraphs = styled.div`
 `
 
 const Kpi = styled.div`
-  width: 20%;
+  width: 18%;
   height: 100%;
 `
 

@@ -13,6 +13,9 @@ import {
 const DailyInfoChart = styled.div`
   width: 100%;
   height: 300px;
+  background-color: #FBFBFB;
+  border-radius: 5px;
+  margin-bottom: 10px;
   p{
     font-weight: bold;
   }
@@ -51,11 +54,11 @@ const DailyInfo= (props) => {
         <DailyInfoChart>
             <p>Activité quotidienne</p>
             <ResponsiveContainer
-                width="100%"
+                width="80%"
                 height="80%"
                 radius={5}
             >
-                <BarChart width="90%" height="100%" data={data}
+                <BarChart width="60%" height="60%" data={data}
                           padding={20}
                           style={{background: "#FBFBFB", borderRadius:"5px"}}>
                     <CartesianGrid strokeDasharray="3 3" vertical={false}/>
@@ -84,9 +87,11 @@ const DailyInfo= (props) => {
                     <Tooltip cursor={{fill: "rgba(196, 196, 196, 0.5)"}} content={<CustomTooltip/>}/>
                     <Legend
                         verticalAlign="top"
+                        align="right"
                         height={36}
                         iconType={"circle"}
-                        iconSize={7}/>
+                        iconSize={7}
+                        />
                     <Bar
                         yAxisId={"kilo"}
                         dataKey="kilogram"
