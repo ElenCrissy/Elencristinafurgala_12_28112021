@@ -31,9 +31,9 @@ const SessionDuration = (props) => {
                        radius={5}
                        style={{background: "#FF0000", borderRadius:"5px", position:"relative"}}>
                 <defs>
-                    <linearGradient id="colorLine" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="white" stopOpacity={0.8}/>
-                        <stop offset="95%" stopColor="white" stopOpacity={0}/>
+                    <linearGradient id="colorLine" >
+                        <stop offset="0%" stopColor="white" stopOpacity={0.2}/>
+                        <stop offset="95%" stopColor="white" stopOpacity={0.8}/>
                     </linearGradient>
                 </defs>
                 <XAxis dataKey="day"/>
