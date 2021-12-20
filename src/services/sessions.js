@@ -8,9 +8,16 @@ const useSessions = (userId) => {
         const resp = await fetch(url)
         const data = await resp.json()
         const sessionsData = data.data
+        const newData = {
+            day: 8,
+            sessionLength: 40
+        }
+        const sessionsDuration = sessionsData.sessions
+        sessionsDuration.push(newData)
         setSessions(sessionsData)
 
     }, [])
+
 
     return sessions
 }

@@ -61,7 +61,9 @@ const SessionDuration = (props) => {
                 </defs>
                 <XAxis dataKey="day"
                        width="100%"
-                       tickLine={false}/>
+                       tickLine={false}
+                       axisLine={false}
+                       tick={{stroke: 'white', fontSize: '10px'}}/>
                 <CartesianGrid horizontal={false} vertical={false} strokeDasharray="3 3" />
                 <Tooltip cursor={false} style={{fill: "black"}}
                          content={<CustomTooltip/>}/>
