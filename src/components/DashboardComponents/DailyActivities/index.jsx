@@ -16,11 +16,15 @@ const DailyInfoChart = styled.div`
   background-color: #FBFBFB;
   border-radius: 5px;
   margin-bottom: 10px;
+  position: relative;
   p{
+    position: relative;
+    top: 10px;
+    left: 10px;
     font-weight: bold;
+    //margin-left: 3%;
   }
 `
-
 const StyledTooltip = styled.div`
     background-color: #E60000;
 `
@@ -54,13 +58,13 @@ const DailyInfo= (props) => {
         <DailyInfoChart>
             <p>Activité quotidienne</p>
             <ResponsiveContainer
-                width="80%"
+                width="100%"
                 height="80%"
                 radius={5}
             >
                 <BarChart width="60%" height="60%" data={data}
                           padding={20}
-                          style={{background: "#FBFBFB", borderRadius:"5px"}}>
+                >
                     <CartesianGrid strokeDasharray="3 3" vertical={false}/>
                     <XAxis data={dataIndex}
                            tickLine={false}
@@ -88,7 +92,7 @@ const DailyInfo= (props) => {
                     <Legend
                         verticalAlign="top"
                         align="right"
-                        height={36}
+                        // margin={[0,30,0,0]}
                         iconType={"circle"}
                         iconSize={7}
                         />
