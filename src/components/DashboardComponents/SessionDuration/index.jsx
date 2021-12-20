@@ -9,6 +9,29 @@ import {
     Area
 } from "recharts";
 
+const CustomTooltip = ({active, payload}) => {
+    if(active) {
+        return (
+            <StyledTooltip>
+                {payload[0].value} min
+            </StyledTooltip>
+        )
+    }
+    return null
+}
+
+const StyledTooltip = styled.div`
+  width: 40px;
+  height: 25px;
+  color: black;
+  font-size: 8px;
+  font-weight: bold;
+  background-color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
 const Sessions = styled.div`
   width: 200px;
   p{
@@ -40,7 +63,8 @@ const SessionDuration = (props) => {
                        width="100%"
                        tickLine={false}/>
                 <CartesianGrid horizontal={false} vertical={false} strokeDasharray="3 3" />
-                <Tooltip />
+                <Tooltip cursor={false} style={{fill: "black"}}
+                         content={<CustomTooltip/>}/>
                 <Area
                     type="monotone"
                     dataKey="sessionLength"

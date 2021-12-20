@@ -8,7 +8,6 @@ const useUserFirstName = (userId) => {
 
         const resp = await fetch(url)
         const data = await resp.json()
-        console.log(data)
         const userData = data.data.userInfos
         setUserFirstName(userData.firstName)
 

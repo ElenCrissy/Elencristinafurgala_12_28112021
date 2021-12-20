@@ -26,15 +26,26 @@ const DailyInfoChart = styled.div`
   }
 `
 const StyledTooltip = styled.div`
-    background-color: #E60000;
+  width: 40px;
+  height: 60px;
+  color: white;
+  font-size: 8px;
+  font-weight: normal;
+  background-color: #E60000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  span{
+    text-align: center;
+  }
 `
 
-const CustomTooltip = (active, calories, weight) => {
+const CustomTooltip = ({active, payload}) => {
     if(active) {
-        // console.log(weight)
         return (
             <StyledTooltip>
-
+                <span>{payload[0].value}kg</span>
+                <span>{payload[1].value}kCal</span>
             </StyledTooltip>
         )
     }
