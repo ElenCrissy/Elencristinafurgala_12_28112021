@@ -92,7 +92,6 @@ const DailyInfo= (props) => {
                     <Legend
                         verticalAlign="top"
                         align="right"
-                        // margin={[0,30,0,0]}
                         iconType={"circle"}
                         iconSize={7}
                         />

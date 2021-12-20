@@ -23,7 +23,7 @@ const SessionDuration = (props) => {
     const data = props.data.sessions
     return(
         <Sessions>
-            <p>Durée des sessions</p>
+            <p>Durée moyenne des sessions</p>
             <AreaChart width={200}
                        height={200}
                        data={data}
@@ -32,11 +32,11 @@ const SessionDuration = (props) => {
                        style={{background: "#FF0000", borderRadius:"5px", position:"relative"}}>
                 <defs>
                     <linearGradient id="colorLine" >
-                        <stop offset="0%" stopColor="white" stopOpacity={0.2}/>
+                        <stop offset="0%" stopColor="white" stopOpacity={0.4}/>
                         <stop offset="95%" stopColor="white" stopOpacity={0.8}/>
                     </linearGradient>
                 </defs>
-                <XAxis dataKey="day"/>
+                <XAxis dataKey="day" width="100%"/>
                 <CartesianGrid horizontal={false} vertical={false} strokeDasharray="3 3" />
                 <Tooltip />
                 <Area
@@ -45,7 +45,7 @@ const SessionDuration = (props) => {
                     stroke="url(#colorLine)"
                     strokeWidth={2}
                     fillOpacity={1}
-                    // fill="url(#colorUv)"
+                    fill="none"
                     style={{color: "white"}}
                     />
             </AreaChart>
