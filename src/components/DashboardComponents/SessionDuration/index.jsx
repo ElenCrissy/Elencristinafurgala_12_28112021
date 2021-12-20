@@ -36,7 +36,9 @@ const SessionDuration = (props) => {
                         <stop offset="95%" stopColor="white" stopOpacity={0.8}/>
                     </linearGradient>
                 </defs>
-                <XAxis dataKey="day" width="100%"/>
+                <XAxis dataKey="day"
+                       width="100%"
+                       tickLine={false}/>
                 <CartesianGrid horizontal={false} vertical={false} strokeDasharray="3 3" />
                 <Tooltip />
                 <Area

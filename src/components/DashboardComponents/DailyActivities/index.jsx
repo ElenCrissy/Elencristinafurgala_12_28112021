@@ -62,16 +62,17 @@ const DailyInfo= (props) => {
                 height="80%"
                 radius={5}
             >
-                <BarChart width="60%" height="60%" data={data}
-                          padding={20}
-                >
+                <BarChart width="60%"
+                          height="60%"
+                          data={data}
+                          padding={20}>
                     <CartesianGrid strokeDasharray="3 3" vertical={false}/>
                     <XAxis data={dataIndex}
                            tickLine={false}
                            tickFormatter={(number) => `${number+1}`}
                            scale="point"
                            padding={{ left: 9, right: 9 }}
-                    />
+                           fill="grey"/>
                     <YAxis
                         yAxisId={"kilo"}
                         dataKey="kilogram"
@@ -93,8 +94,7 @@ const DailyInfo= (props) => {
                         verticalAlign="top"
                         align="right"
                         iconType={"circle"}
-                        iconSize={7}
-                        />
+                        iconSize={7}/>
                     <Bar
                         yAxisId={"kilo"}
                         dataKey="kilogram"
