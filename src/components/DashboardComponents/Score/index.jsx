@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
+
 import {
     RadialBarChart,
     RadialBar,
@@ -28,7 +30,7 @@ const Score = (props) => {
                 height={200}
                 innerRadius="10%"
                 outerRadius="80%"
-                data={props.data}
+                data={props}
                 startAngle={180}
                 endAngle={0}
                 style={{background:"#FBFBFB", borderRadius:"5px"}}
@@ -39,6 +41,10 @@ const Score = (props) => {
             </RadialBarChart>
         </ScoreContainer>
     )
+}
+
+Score.propTypes = {
+    props: PropTypes.number.isRequired,
 }
 
 export default Score;

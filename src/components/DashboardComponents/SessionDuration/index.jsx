@@ -8,6 +8,8 @@ import {
     Tooltip,
     Area
 } from "recharts";
+import PropTypes from "prop-types";
+import Score from "../Score";
 
 const CustomTooltip = ({active, payload}) => {
     if(active) {
@@ -45,7 +47,6 @@ const Sessions = styled.div`
 `
 const SessionDuration = (props) => {
     const data = props.data.sessions
-    console.log(data)
     return(
         <Sessions>
             <p>Durée moyenne des sessions</p>
@@ -81,6 +82,10 @@ const SessionDuration = (props) => {
             </AreaChart>
         </Sessions>
     )
+}
+
+SessionDuration.propTypes = {
+    props: PropTypes.number.isRequired,
 }
 
 export default SessionDuration
