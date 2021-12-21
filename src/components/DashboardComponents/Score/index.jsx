@@ -44,7 +44,7 @@ const Score = (props) => {
 }
 
 Score.propTypes = {
-    props: PropTypes.number.isRequired,
+    props: PropTypes.number,
 }
 
 export default Score;

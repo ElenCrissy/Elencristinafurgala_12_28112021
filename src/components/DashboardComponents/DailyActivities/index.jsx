@@ -22,7 +22,6 @@ const DailyInfoChart = styled.div`
     top: 10px;
     left: 10px;
     font-weight: bold;
-    //margin-left: 3%;
   }
 `
 const StyledTooltip = styled.div`
@@ -65,23 +64,26 @@ const DailyInfo= (props) => {
                 radius={5}
             >
                 <BarChart width="60%"
-                          height="60%"
+                          // height="60%"
                           data={data}
-                          padding={20}>
+                          padding={20}
+                          margin={{ top: 40, right: 0, left: 30, bottom: 5 }}>
                     <CartesianGrid strokeDasharray="3 3" vertical={false}/>
                     <XAxis data={dataIndex}
                            tickLine={false}
                            tickFormatter={(number) => `${number+1}`}
                            scale="point"
                            padding={{ left: 9, right: 9 }}
-                           fill="grey"/>
+                           fill="grey"
+                           interval="preserveStart"/>
                     <YAxis
                         yAxisId={"kilo"}
                         dataKey="kilogram"
                         orientation="right"
                         height={700}
                         axisLine={false}
-                        tickLine={false}/>
+                        tickLine={false}
+                        tickCount ={4}/>
                     <YAxis
                         yAxisId={"calo"}
                         dataKey="calories"
@@ -96,7 +98,8 @@ const DailyInfo= (props) => {
                         verticalAlign="top"
                         align="right"
                         iconType={"circle"}
-                        iconSize={7}/>
+                        iconSize={7}
+                        />
                     <Bar
                         yAxisId={"kilo"}
                         dataKey="kilogram"

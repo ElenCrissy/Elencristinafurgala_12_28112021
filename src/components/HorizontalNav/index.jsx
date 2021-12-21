@@ -4,7 +4,7 @@ import logo from "../../assets/logo.png";
 
 const HorizontalNavContainer = styled.div`
   width: 100%;
-  height: 80px;
+  height: 3%;
   background-color: black;
   display: flex;
   justify-content: space-between;
@@ -12,7 +12,7 @@ const HorizontalNavContainer = styled.div`
 `
 
 const Logo = styled.img`
-  height: 70%;
+  height: 80px;
   margin-left: 20px;
 `
 

@@ -1,15 +1,14 @@
 import styled from "styled-components";
 import {
-    AreaChart,
+    LineChart,
     XAxis,
     Label,
     YAxis,
     CartesianGrid,
     Tooltip,
-    Area
+    Line
 } from "recharts";
 import PropTypes from "prop-types";
-import Score from "../Score";
 
 const CustomTooltip = ({active, payload}) => {
     if(active) {
@@ -37,6 +36,7 @@ const StyledTooltip = styled.div`
 const Sessions = styled.div`
   width: 200px;
   p{
+    width: 100px;
     font-size: 14px;
     margin: 0;
     position: absolute;
@@ -50,12 +50,12 @@ const SessionDuration = (props) => {
     return(
         <Sessions>
             <p>Durée moyenne des sessions</p>
-            <AreaChart width={200}
+            <LineChart width={200}
                        height={200}
                        data={data}
-                       margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+                       margin={{ top: 5, right: 0, left: 0, bottom: 5 }}
                        radius={5}
-                       style={{background: "#FF0000", borderRadius:"5px", position:"relative"}}>
+                       style={{background: "#FF0000", borderRadius:"5px"}}>
                 <defs>
                     <linearGradient id="colorLine" >
                         <stop offset="0%" stopColor="white" stopOpacity={0.4}/>
@@ -66,26 +66,30 @@ const SessionDuration = (props) => {
                        tickLine={false}
                        axisLine={false}
                        tick={{stroke: 'white', fontSize: '7px'}}
-                       interval="preserveStart"/>
+                       style={{opacity : 0.7}}
+                />
                 <CartesianGrid horizontal={false} vertical={false} strokeDasharray="3 3" />
                 <Tooltip cursor={{fill: '#f00'}}
                          content={<CustomTooltip/>}/>
-                <Area
+                <Line
+                    dot={false}
                     type="monotone"
                     dataKey="sessionLength"
                     stroke="url(#colorLine)"
                     strokeWidth={2}
                     fillOpacity={1}
                     fill="none"
-                    style={{color: "white"}}
-                    />
-            </AreaChart>
+                    layout={"vertical"}>
+                    {/*<LabelList content={<CustomizedLabel/>} />*/}
+                </Line>
+            </LineChart>
         </Sessions>
     )
 }
 
 SessionDuration.propTypes = {
-    props: PropTypes.number.isRequired,
+    day: PropTypes.number,
+    sessionLength: PropTypes.number
 }
 
 export default SessionDuration

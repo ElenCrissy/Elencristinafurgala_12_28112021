@@ -14,6 +14,7 @@ import Score from "../../components/DashboardComponents/Score";
 const DashboardContainer = styled.div`
   width: 80%;
   margin: 0 auto;
+  height: 97%;
 `
 
 const DetailsContainer = styled.section`
@@ -36,6 +37,10 @@ const SmallGraphs = styled.div`
 const Kpi = styled.div`
   width: 18%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-between;
 `
 
 const Dashboard = (props) => {
@@ -48,7 +53,6 @@ const Dashboard = (props) => {
        kpiDOMArray.push(kpiDOM)
     }
 
-    const sessionData = useSessions(props.userId)
     const scoreData = useScore(props.userId)
     return (
         <DashboardContainer>
@@ -57,8 +61,7 @@ const Dashboard = (props) => {
                 <Graphs>
                     <DailyInfo data={useActivity(props.userId)}/>
                     <SmallGraphs>
-                        {sessionData === null || sessionData === undefined ?
-                            null : <SessionDuration data={sessionData.sessions}/>}
+                        <SessionDuration data={useSessions(props.userId)}/>
                         <RadarGraph data={usePerf(props.userId)}/>
                         {scoreData === null || scoreData === undefined ? null : <Score data={scoreData.score}/>}
                     </SmallGraphs>
