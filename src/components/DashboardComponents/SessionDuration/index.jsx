@@ -35,6 +35,7 @@ const StyledTooltip = styled.div`
 const Sessions = styled.div`
   width: 200px;
   p{
+    font-size: 14px;
     margin: 0;
     position: absolute;
     z-index: 999;
@@ -44,6 +45,7 @@ const Sessions = styled.div`
 `
 const SessionDuration = (props) => {
     const data = props.data.sessions
+    console.log(data)
     return(
         <Sessions>
             <p>Durée moyenne des sessions</p>
@@ -60,12 +62,12 @@ const SessionDuration = (props) => {
                     </linearGradient>
                 </defs>
                 <XAxis dataKey="day"
-                       width="100%"
                        tickLine={false}
                        axisLine={false}
-                       tick={{stroke: 'white', fontSize: '10px'}}/>
+                       tick={{stroke: 'white', fontSize: '7px'}}
+                       interval="preserveStart"/>
                 <CartesianGrid horizontal={false} vertical={false} strokeDasharray="3 3" />
-                <Tooltip cursor={false} style={{fill: "black"}}
+                <Tooltip cursor={{fill: '#f00'}}
                          content={<CustomTooltip/>}/>
                 <Area
                     type="monotone"

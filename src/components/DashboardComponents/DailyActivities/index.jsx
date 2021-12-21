@@ -55,15 +55,6 @@ const CustomTooltip = ({active, payload}) => {
 const DailyInfo= (props) => {
     const data = props.data
     const dataIndex = Array.from(data.keys())
-    // console.log(data)
-    // data.forEach(el => {
-    //     let val = el.calories
-    //     val = val/0.5
-    //     console.log(val)
-    //     el.calories = val
-    //     return el.calories
-    // })
-    // console.log(data)
 
     return(
         <DailyInfoChart>
