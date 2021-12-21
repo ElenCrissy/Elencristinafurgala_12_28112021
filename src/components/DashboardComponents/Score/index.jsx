@@ -21,7 +21,14 @@ const ScoreContainer = styled.div`
   }
 `
 
-const Score = (props) => {
+const Score = ({ data }) => {
+    
+    let dataArray = [{
+        data,
+        fill: "#FF0000",
+        name: "score"
+    }]
+
     return(
         <ScoreContainer>
             <p>Score</p>
@@ -30,12 +37,12 @@ const Score = (props) => {
                 height={200}
                 innerRadius="10%"
                 outerRadius="80%"
-                data={props}
+                data={dataArray}
                 startAngle={180}
                 endAngle={0}
                 style={{background:"#FBFBFB", borderRadius:"5px"}}
             >
-                <RadialBar minAngle={15} label={{ fill: 'black', position: 'insideStart' }} background clockWise={true} dataKey='score' />
+                <RadialBar minAngle={15} label={{ fill: 'black', position: 'insideStart' }} background clockWise={true} dataKey='data' />
                 {/*<Legend iconSize={10} width={120} height={140} layout='vertical' verticalAlign='middle' align="right" />*/}
                 <Tooltip />
             </RadialBarChart>
@@ -44,7 +51,7 @@ const Score = (props) => {
 }
 
 Score.propTypes = {
-    props: PropTypes.number,
+    data: PropTypes.number,
 }
 
 export default Score;

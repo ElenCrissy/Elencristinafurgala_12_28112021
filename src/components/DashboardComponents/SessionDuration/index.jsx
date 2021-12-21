@@ -47,6 +47,7 @@ const Sessions = styled.div`
 `
 const SessionDuration = (props) => {
     const data = props.data.sessions
+    console.log(data)
     return(
         <Sessions>
             <p>Durée moyenne des sessions</p>

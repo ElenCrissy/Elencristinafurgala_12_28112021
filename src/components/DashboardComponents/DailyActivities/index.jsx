@@ -51,6 +51,10 @@ const CustomTooltip = ({active, payload}) => {
     return null
 }
 
+const renderColorfulLegendText = (value) => {
+    return <span style={{color: "grey" }}>{value}</span>;
+};
+
 const DailyInfo= (props) => {
     const data = props.data
     const dataIndex = Array.from(data.keys())
@@ -64,7 +68,7 @@ const DailyInfo= (props) => {
                 radius={5}
             >
                 <BarChart width="60%"
-                          // height="60%"
+                          height={300}
                           data={data}
                           padding={20}
                           margin={{ top: 40, right: 0, left: 30, bottom: 5 }}>
@@ -99,6 +103,8 @@ const DailyInfo= (props) => {
                         align="right"
                         iconType={"circle"}
                         iconSize={7}
+                        height={50}
+                        formatter={renderColorfulLegendText}
                         />
                     <Bar
                         yAxisId={"kilo"}
