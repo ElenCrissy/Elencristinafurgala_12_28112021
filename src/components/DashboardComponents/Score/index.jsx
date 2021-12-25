@@ -9,7 +9,7 @@ import {
 } from "recharts";
 
 const ScoreContainer = styled.div`
-  width: 30%;
+  width: 33%;
   position: relative;
   p{
     position: absolute;
@@ -33,8 +33,8 @@ const Score = ({ data }) => {
         <ScoreContainer>
             <p>Score</p>
             <RadialBarChart
-                width={200}
-                height={200}
+                width={235}
+                height={235}
                 innerRadius="10%"
                 outerRadius="80%"
                 data={dataArray}

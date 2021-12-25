@@ -34,7 +34,7 @@ const StyledTooltip = styled.div`
 `
 
 const Sessions = styled.div`
-  width: 200px;
+  width: 33%;
   p{
     width: 100px;
     font-size: 14px;
@@ -51,8 +51,8 @@ const SessionDuration = (props) => {
     return(
         <Sessions>
             <p>Durée moyenne des sessions</p>
-            <LineChart width={200}
-                       height={200}
+            <LineChart width={235}
+                       height={235}
                        data={data}
                        margin={{ top: 5, right: 0, left: 0, bottom: 5 }}
                        radius={5}

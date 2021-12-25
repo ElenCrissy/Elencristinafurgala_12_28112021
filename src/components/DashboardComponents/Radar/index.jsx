@@ -10,6 +10,10 @@ import {
     LabelList
 } from "recharts";
 
+const RadarContainer = styled.div`
+  width: 33%;
+`
+
 const RadarGraph = (props) => {
     const data = props.data
     const kinds = data.kind
@@ -45,18 +49,20 @@ const RadarGraph = (props) => {
     }
 
     return (
-        <RadarChart
-            outerRadius={60}
-            width={200}
-            height={200}
-            data={perfValues}
-            style={{background: "#282D30", borderRadius:"5px", fill:"#FFF"}}
-        >
-            <PolarGrid radialLines={false}/>
-            <PolarAngleAxis dataKey="kind" style={{fontSize: "12px"}}/>
-            <PolarRadiusAxis dataKey="value" angle={"none"}/>
-            <Radar dataKey="value" legendType={"none"} fill="#FF0101" fillOpacity={0.7}/>
-        </RadarChart>
+        <RadarContainer>
+            <RadarChart
+                outerRadius={60}
+                width={235}
+                height={235}
+                data={perfValues}
+                style={{background: "#282D30", borderRadius:"5px", fill:"#FFF"}}
+            >
+                <PolarGrid radialLines={false}/>
+                <PolarAngleAxis dataKey="kind" style={{fontSize: "12px"}}/>
+                <PolarRadiusAxis dataKey="value" angle={"none"}/>
+                <Radar dataKey="value" legendType={"none"} fill="#FF0101" fillOpacity={0.7}/>
+            </RadarChart>
+        </RadarContainer>
     )
 }
 
