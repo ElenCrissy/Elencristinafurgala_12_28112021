@@ -9,6 +9,7 @@ import {
     Legend,
     Bar
 } from "recharts";
+import PropTypes from "prop-types";
 
 const DailyInfoChart = styled.div`
   width: 100%;
@@ -56,6 +57,7 @@ const renderColorfulLegendText = (value) => {
 };
 
 const DailyInfo= (props) => {
+    console.log(props, 'props')
     const data = props.data
     const dataIndex = Array.from(data.keys())
 
@@ -73,13 +75,14 @@ const DailyInfo= (props) => {
                           // padding={20}
                           margin={{ top: 40, right: 0, left: 30, bottom: 5 }}>
                     <CartesianGrid strokeDasharray="3 3" vertical={false}/>
-                    <XAxis data={dataIndex}
-                           tickLine={false}
-                           tickFormatter={(number) => `${number+1}`}
-                           scale="point"
-                           padding={{ left: 9, right: 9 }}
-                           fill="grey"
-                           interval="preserveStart"/>
+                    <XAxis
+                        data={dataIndex}
+                       tickLine={false}
+                       tickFormatter={(number) => `${number+1}`}
+                       scale="point"
+                       padding={{ left: 9, right: 9 }}
+                       fill="grey"
+                       interval="preserveStart"/>
                     <YAxis
                         yAxisId={"kilo"}
                         dataKey="kilogram"
@@ -124,6 +127,11 @@ const DailyInfo= (props) => {
             </ResponsiveContainer>
         </DailyInfoChart>
     )
+}
+
+DailyInfo.propTypes = {
+    data: PropTypes.array.isRequired,
+    
 }
 
 export default DailyInfo

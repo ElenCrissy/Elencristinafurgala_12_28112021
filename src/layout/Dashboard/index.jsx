@@ -54,6 +54,7 @@ const Dashboard = (props) => {
     }
 
     const scoreData = useScore(props.userId)
+
     return (
         <DashboardContainer>
             <DashboardHeader userId={props.userId}/>
