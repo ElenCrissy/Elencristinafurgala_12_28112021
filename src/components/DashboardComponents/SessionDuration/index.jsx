@@ -47,7 +47,6 @@ const Sessions = styled.div`
 `
 const SessionDuration = (props) => {
     const data = props.data.sessions
-    console.log(data)
     return(
         <Sessions>
             <p>Durée moyenne des sessions</p>
@@ -70,7 +69,8 @@ const SessionDuration = (props) => {
                        style={{opacity : 0.7}}
                 />
                 <CartesianGrid horizontal={false} vertical={false} strokeDasharray="3 3" />
-                <Tooltip cursor={{fill: '#f00'}}
+                <Tooltip allowEscapeViewBox={{ x: true, y: true }}
+                         cursor={false}
                          content={<CustomTooltip/>}/>
                 <Line
                     dot={false}
