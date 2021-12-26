@@ -70,7 +70,7 @@ const DailyInfo= (props) => {
                 <BarChart width="60%"
                           height={300}
                           data={data}
-                          padding={20}
+                          // padding={20}
                           margin={{ top: 40, right: 0, left: 30, bottom: 5 }}>
                     <CartesianGrid strokeDasharray="3 3" vertical={false}/>
                     <XAxis data={dataIndex}

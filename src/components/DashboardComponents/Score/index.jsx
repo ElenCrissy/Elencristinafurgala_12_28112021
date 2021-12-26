@@ -22,11 +22,9 @@ const ScoreContainer = styled.div`
 `
 
 const Score = ({ data }) => {
-    
     let dataArray = [{
         data,
-        fill: "#FF0000",
-        name: "score"
+        max : 1
     }]
 
     return(
@@ -42,7 +40,11 @@ const Score = ({ data }) => {
                 endAngle={0}
                 style={{background:"#FBFBFB", borderRadius:"5px"}}
             >
-                <RadialBar minAngle={15} label={{ fill: 'black', position: 'insideStart' }} background clockWise={true} dataKey='data' />
+                <RadialBar minAngle={15}
+                           label={{ fill: 'black', position: 'insideStart' }}
+                           style={{backgroundColor:"blue"}}
+                           clockWise={true}
+                           dataKey='data' />
                 {/*<Legend iconSize={10} width={120} height={140} layout='vertical' verticalAlign='middle' align="right" />*/}
                 <Tooltip />
             </RadialBarChart>
