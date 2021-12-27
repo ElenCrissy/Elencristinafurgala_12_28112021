@@ -48,18 +48,30 @@ const Sessions = styled.div`
 `
 const SessionDuration = ({ data }) => {
     const sessions = data.sessions
-    const weekArray = ["L", "M", "M", "J", "V", "S", "D"]
-    // console.log(sessions)
     if(sessions != undefined){
         sessions.forEach(session => {
-            // console.log(session.day)
-            // if(session.day === 1) {
-            //     session.day
-            // }
-            for (let i = 0; i < weekArray; i++) {
-                session.day = i
-                console.log(session)
+            console.log(session)
+            if(session.day === 1) {
+                console.log(session.day)
+                return session.day === "L"
             }
+            if(session.day === 2 || session.day === 3) {
+                return session.day === "M"
+            }
+            if(session.day === 4) {
+                return session.day === "J"
+            }
+            if(session.day === 5) {
+                return session.day === "V"
+            }
+            if(session.day === 6) {
+                return session.day === "S"
+            }
+            if(session.day === 7) {
+                return session.day === "D"
+            }
+            console.log(session)
+            return session
         })
     }
 

@@ -127,7 +127,11 @@ const DailyInfo= ({ data }) => {
 }
 
 DailyInfo.propTypes = {
-    data: PropTypes.arrayOf(PropTypes.object)
+    data: PropTypes.arrayOf(PropTypes.objectOf({
+        calories: PropTypes.number,
+        date: PropTypes.string,
+        kilogram: PropTypes.number
+    }))
 }
 
 export default DailyInfo
