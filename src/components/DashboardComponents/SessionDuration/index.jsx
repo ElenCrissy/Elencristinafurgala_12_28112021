@@ -46,15 +46,21 @@ const Sessions = styled.div`
     opacity: 0.5;
   }
 `
-const SessionDuration = (props) => {
-    const data = props.data.sessions
-    console.log(data)
+const SessionDuration = ({ data }) => {
+    const sessions = data.sessions
+    const weekArray = ["L", "M", "M", "J", "V", "S", "D"]
+    console.log(sessions)
+    sessions.forEach(session => {
+        console.log(session.day)
+        
+    })
+
     return(
         <Sessions>
             <p>Durée moyenne des sessions</p>
             <LineChart width={235}
                        height={235}
-                       data={data}
+                       data={sessions}
                        margin={{ top: 5, right: 0, left: 0, bottom: 5 }}
                        radius={5}
                        style={{background: "#FF0000", borderRadius:"5px"}}>

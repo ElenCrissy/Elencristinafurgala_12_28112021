@@ -56,11 +56,8 @@ const renderColorfulLegendText = (value) => {
     return <span style={{color: "grey" }}>{value}</span>;
 };
 
-const DailyInfo= (props) => {
-    console.log(props, 'props')
-    const data = props.data
+const DailyInfo= ({ data }) => {
     const dataIndex = Array.from(data.keys())
-
     return(
         <DailyInfoChart>
             <p>Activité quotidienne</p>
@@ -130,8 +127,7 @@ const DailyInfo= (props) => {
 }
 
 DailyInfo.propTypes = {
-    data: PropTypes.array.isRequired,
-    
+    data: PropTypes.arrayOf(PropTypes.object)
 }
 
 export default DailyInfo
