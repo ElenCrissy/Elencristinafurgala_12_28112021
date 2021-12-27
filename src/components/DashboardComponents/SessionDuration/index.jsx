@@ -49,11 +49,19 @@ const Sessions = styled.div`
 const SessionDuration = ({ data }) => {
     const sessions = data.sessions
     const weekArray = ["L", "M", "M", "J", "V", "S", "D"]
-    console.log(sessions)
-    sessions.forEach(session => {
-        console.log(session.day)
-        
-    })
+    // console.log(sessions)
+    if(sessions != undefined){
+        sessions.forEach(session => {
+            // console.log(session.day)
+            // if(session.day === 1) {
+            //     session.day
+            // }
+            for (let i = 0; i < weekArray; i++) {
+                session.day = i
+                console.log(session)
+            }
+        })
+    }
 
     return(
         <Sessions>
