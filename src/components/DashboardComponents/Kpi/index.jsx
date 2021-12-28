@@ -3,6 +3,7 @@ import calories from "../../../assets/energy.svg";
 import proteins from "../../../assets/chicken.svg";
 import carbohydrates from "../../../assets/apple.svg";
 import lipids from "../../../assets/cheeseburger.svg";
+import PropTypes from "prop-types";
 
 const KpiContainer = styled.div`
   width: 100%;
@@ -59,6 +60,11 @@ const Index = (props) => {
         </KpiContainer>
     )
 
+}
+
+Index.propTypes = {
+    kpiName : PropTypes.string,
+    kpiValue : PropTypes.number
 }
 
 export default Index

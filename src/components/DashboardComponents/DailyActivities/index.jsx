@@ -57,6 +57,7 @@ const renderColorfulLegendText = (value) => {
 };
 
 const DailyInfo = ({ data }) => {
+    console.log(data)
     const dataIndex = Array.from(data.keys())
     return(
         <DailyInfoChart>
@@ -126,12 +127,12 @@ const DailyInfo = ({ data }) => {
     )
 }
 
-DailyInfo.propTypes = {
-    data: PropTypes.arrayOf(PropTypes.objectOf({
+
+
+DailyInfo.propTypes = PropTypes.arrayOf(PropTypes.objectOf({
         calories: PropTypes.number,
-        date: PropTypes.string,
+        day: PropTypes.string,
         kilogram: PropTypes.number
-    }))
-}
+}))
 
 export default DailyInfo

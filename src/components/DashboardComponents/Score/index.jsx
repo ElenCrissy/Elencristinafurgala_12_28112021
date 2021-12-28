@@ -52,7 +52,7 @@ const Score = ({ data }) => {
 }
 
 Score.propTypes = {
-    data: PropTypes.number,
+    data: PropTypes.number
 }
 
 export default Score;

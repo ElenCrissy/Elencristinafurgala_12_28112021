@@ -10,6 +10,7 @@ import DailyInfo from "../../components/DashboardComponents/DailyActivities";
 import SessionDuration from "../../components/DashboardComponents/SessionDuration";
 import RadarGraph from "../../components/DashboardComponents/Radar";
 import Score from "../../components/DashboardComponents/Score";
+import PropTypes from "prop-types";
 
 const DashboardContainer = styled.div`
   width: 80%;
@@ -44,6 +45,7 @@ const Kpi = styled.div`
 `
 
 const Dashboard = (props) => {
+    console.log(props)
    const kpi = useKpi(props.userId)
     let kpiDOMArray =[]
     for(let i in kpi){
@@ -52,7 +54,6 @@ const Dashboard = (props) => {
        const kpiDOM = (<Index kpiName={name} kpiValue={value}/>)
        kpiDOMArray.push(kpiDOM)
     }
-
     const scoreData = useScore(props.userId)
     return (
         <DashboardContainer>
@@ -73,6 +74,10 @@ const Dashboard = (props) => {
         </DashboardContainer>
     )
 
+}
+
+Dashboard.propTypes = {
+    userId: PropTypes.number
 }
 
 export default Dashboard;

@@ -17,7 +17,6 @@ const RadarContainer = styled.div`
 const RadarGraph = ({ data }) => {
     const kinds = data.kind
     const perfValues = data.data
-
     if(perfValues !== undefined) {
         perfValues.map(perfValue => {
             for (let i in kinds) {
@@ -68,11 +67,9 @@ const RadarGraph = ({ data }) => {
 }
 
 RadarGraph.propTypes = {
-    data: PropTypes.arrayOf(PropTypes.objectOf({
-        calories: PropTypes.number,
-        date: PropTypes.string,
-        kilogram: PropTypes.number
-    }))
+    data: PropTypes.array,
+    kind: PropTypes.object,
+    userId: PropTypes.number
 }
 
 export default RadarGraph
