@@ -2,12 +2,9 @@ import styled from "styled-components";
 import {
     LineChart,
     XAxis,
-    Label,
-    YAxis,
     CartesianGrid,
     Tooltip,
     Line,
-    LabelList
 } from "recharts";
 import PropTypes from "prop-types";
 
@@ -50,9 +47,7 @@ const SessionDuration = ({ data }) => {
     const sessions = data.sessions
     if(sessions != undefined){
         sessions.forEach(session => {
-            console.log(session)
             if(session.day === 1) {
-                console.log(session.day)
                 return session.day = "L"
             }
             if(session.day === 2 || session.day === 3) {

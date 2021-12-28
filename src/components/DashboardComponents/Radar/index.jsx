@@ -6,17 +6,15 @@ import {
     PolarAngleAxis,
     PolarRadiusAxis,
     Radar,
-    Legend,
     LabelList,
-    Label
 } from "recharts";
+import PropTypes from "prop-types";
 
 const RadarContainer = styled.div`
   width: 35%;
 `
 
-const RadarGraph = (props) => {
-    const data = props.data
+const RadarGraph = ({ data }) => {
     const kinds = data.kind
     const perfValues = data.data
 
@@ -67,6 +65,14 @@ const RadarGraph = (props) => {
             </RadarChart>
         </RadarContainer>
     )
+}
+
+RadarGraph.propTypes = {
+    data: PropTypes.arrayOf(PropTypes.objectOf({
+        calories: PropTypes.number,
+        date: PropTypes.string,
+        kilogram: PropTypes.number
+    }))
 }
 
 export default RadarGraph

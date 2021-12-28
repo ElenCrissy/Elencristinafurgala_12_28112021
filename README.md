@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# Project 12 - Analytics dashboard with React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repo contains all the source code to run the sports analytics dashboard SportSee.
 
-## Available Scripts
+The home page shows 4 charts and 4 KPIs about the user's physical conditions and sport sessions.
 
-In the project directory, you can run:
+## 1. General information
 
-### `yarn start`
+To start this project, you need to clone the backend repo on GitHub and run the API following the README instructions.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[Link to GitHub repo](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+## 2. Project
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 2.1 Prerequisites
 
-### `yarn build`
+- [NodeJS (**version 12.18**)](https://nodejs.org/en/)
+- [Yarn](https://yarnpkg.com/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 2.2 Technologies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React 17.0.2
+- Recharts 2.1.6
+- Styled Components 5.3.3
+- PropTypes 15.7.2
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 2.3 Launching the project
 
-### `yarn eject`
+- Fork the repository
+- Clone it on your computer.
+- The `npm start` command will allow you to run the project.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 3. Use of the project
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 3.1 API calls
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+API calls are located in the following folder : src/services.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+User's id is used as an argument of the hook.
+Endpoints to be used are mentioned in the README file of the backend repo.
 
-## Learn More
+### 3.2 PropTypes
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+PropTypes are located at the end of each component file right before export line.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 3.2 JSDOC
 
-### Code Splitting
+JSDOC will help you understand the role of each component.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

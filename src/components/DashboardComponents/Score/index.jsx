@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import {
     RadialBarChart,
     RadialBar,
-    Legend,
     Tooltip,
 } from "recharts";
 

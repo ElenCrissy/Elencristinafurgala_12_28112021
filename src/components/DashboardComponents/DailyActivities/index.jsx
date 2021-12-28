@@ -56,7 +56,7 @@ const renderColorfulLegendText = (value) => {
     return <span style={{color: "grey" }}>{value}</span>;
 };
 
-const DailyInfo= ({ data }) => {
+const DailyInfo = ({ data }) => {
     const dataIndex = Array.from(data.keys())
     return(
         <DailyInfoChart>
