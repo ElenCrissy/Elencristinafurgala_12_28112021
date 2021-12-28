@@ -9,7 +9,7 @@ import {
 } from "recharts";
 
 const ScoreContainer = styled.div`
-  width: 33%;
+  width: 35%;
   position: relative;
   p{
     position: absolute;

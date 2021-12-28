@@ -35,11 +35,11 @@ const StyledTooltip = styled.div`
 `
 
 const Sessions = styled.div`
-  width: 33%;
+  width: 35%;
   p{
     width: 100px;
     font-size: 14px;
-    margin: 0;
+    margin: 20px;
     position: absolute;
     z-index: 999;
     color: #FFFFFF;
@@ -53,24 +53,26 @@ const SessionDuration = ({ data }) => {
             console.log(session)
             if(session.day === 1) {
                 console.log(session.day)
-                return session.day === "L"
+                return session.day = "L"
             }
             if(session.day === 2 || session.day === 3) {
-                return session.day === "M"
+                return session.day = "M"
             }
             if(session.day === 4) {
-                return session.day === "J"
+                return session.day = "J"
             }
             if(session.day === 5) {
-                return session.day === "V"
+                return session.day = "V"
             }
             if(session.day === 6) {
-                return session.day === "S"
+                return session.day = "S"
             }
             if(session.day === 7) {
-                return session.day === "D"
+                return session.day = "D"
             }
-            console.log(session)
+            if(session.day === 8) {
+                return session.day = ""
+            }
             return session
         })
     }
@@ -79,9 +81,9 @@ const SessionDuration = ({ data }) => {
         <Sessions>
             <p>Durée moyenne des sessions</p>
             <LineChart width={235}
-                       height={235}
+                       height={200}
                        data={sessions}
-                       margin={{ top: 5, right: 0, left: 0, bottom: 5 }}
+                       margin={{ top: 40, right: 0, left: 0, bottom: 5 }}
                        radius={5}
                        style={{background: "#FF0000", borderRadius:"5px"}}>
                 <defs>
@@ -95,7 +97,10 @@ const SessionDuration = ({ data }) => {
                        axisLine={false}
                        tick={{stroke: 'white', fontSize: '7px'}}
                        style={{opacity : 0.7}}
-                />
+                       interval="preserveStart"
+                >
+                    {/*<Label position="center"></Label>*/}
+                </XAxis>
                 <CartesianGrid horizontal={false} vertical={false} strokeDasharray="3 3" />
                 <Tooltip
                          cursor={false}

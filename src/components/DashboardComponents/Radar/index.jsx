@@ -7,11 +7,12 @@ import {
     PolarRadiusAxis,
     Radar,
     Legend,
-    LabelList
+    LabelList,
+    Label
 } from "recharts";
 
 const RadarContainer = styled.div`
-  width: 33%;
+  width: 35%;
 `
 
 const RadarGraph = (props) => {
@@ -58,8 +59,10 @@ const RadarGraph = (props) => {
                 style={{background: "#282D30", borderRadius:"5px", fill:"#FFF"}}
             >
                 <PolarGrid radialLines={false}/>
-                <PolarAngleAxis dataKey="kind" style={{fontSize: "12px"}}/>
-                <PolarRadiusAxis dataKey="value" angle={"none"}/>
+                <PolarAngleAxis dataKey="kind" style={{fontSize: "12px"}}>
+                    <LabelList tickMargin={5}></LabelList>
+                </PolarAngleAxis>
+                <PolarRadiusAxis dataKey="value" angle={"none"} />
                 <Radar dataKey="value" legendType={"none"} fill="#FF0101" fillOpacity={0.7}/>
             </RadarChart>
         </RadarContainer>
