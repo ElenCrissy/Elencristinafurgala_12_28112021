@@ -20,6 +20,12 @@ const ScoreContainer = styled.div`
   }
 `
 
+/**
+ * Returns DOM element of the Score radial bar chart
+ * @param { Number } data
+ * @return { JSX.Element }
+ */
+
 const Score = ({ data }) => {
     let dataArray = [{
         data,

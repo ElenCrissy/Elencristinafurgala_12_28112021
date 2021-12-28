@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import useUserFirstName from "../../../services/users";
+import PropTypes from "prop-types";
 
 const DashboardHeaderContainer = styled.div`
   h1{
@@ -16,6 +17,12 @@ const DashboardHeaderContainer = styled.div`
   }
 `
 
+/**
+ * Returns DOM element of the DashboardHeader
+ * @param { Object } props
+ * @param { Number } props.userId
+ * @return { JSX.Element }
+ */
 
 const DashboardHeader = (props) => {
     const name = useUserFirstName(props.userId)
@@ -26,6 +33,10 @@ const DashboardHeader = (props) => {
             <p>Félicitations ! Vous avez explosé vos objectifs d'hier</p>
         </DashboardHeaderContainer>
     )
+}
+
+DashboardHeader.protoTypes = {
+    userId : PropTypes.number
 }
 
 export default DashboardHeader

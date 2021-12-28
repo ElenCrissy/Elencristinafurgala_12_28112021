@@ -14,6 +14,15 @@ const RadarContainer = styled.div`
   width: 35%;
 `
 
+/**
+ * Returns DOM element of the RadarGraph bar chart
+ * @param { Object } data
+ * @param { Number } data.userId
+ * @param { Object } data.kind
+ * @param { Array.<Object> } data.data
+ * @return { JSX.Element }
+ */
+
 const RadarGraph = ({ data }) => {
     const kinds = data.kind
     const perfValues = data.data

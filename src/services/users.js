@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 const useUserFirstName = (userId) => {
     const [userFirstName, setUserFirstName] = useState(null)
 
+    // Similar to componentDidMount and componentDidUpdate
     useEffect(  async () => {
         const url = `http://localhost:3000/user/${userId}`
 

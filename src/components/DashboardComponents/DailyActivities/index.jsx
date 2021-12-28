@@ -56,8 +56,16 @@ const renderColorfulLegendText = (value) => {
     return <span style={{color: "grey" }}>{value}</span>;
 };
 
+/**
+ * Returns DOM element of the DailyInfo bar chart
+ * @param { Array.<{calories: Number, day: String, kilogram: Number}> } data
+ * @param { String } data.calories
+ * @param { String } data.day
+ * @param { Number } data.kilogram
+ * @return { JSX.Element }
+ */
+
 const DailyInfo = ({ data }) => {
-    console.log(data)
     const dataIndex = Array.from(data.keys())
     return(
         <DailyInfoChart>
@@ -126,8 +134,6 @@ const DailyInfo = ({ data }) => {
         </DailyInfoChart>
     )
 }
-
-
 
 DailyInfo.propTypes = PropTypes.arrayOf(PropTypes.objectOf({
         calories: PropTypes.number,

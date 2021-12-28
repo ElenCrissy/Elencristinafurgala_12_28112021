@@ -44,8 +44,14 @@ const Kpi = styled.div`
   align-content: space-between;
 `
 
+/**
+ * Returns DOM element of the Dashboard
+ * @param { Object } props
+ * @param { Number } props.userId
+ * @return { JSX.Element }
+ */
+
 const Dashboard = (props) => {
-    console.log(props)
    const kpi = useKpi(props.userId)
     let kpiDOMArray =[]
     for(let i in kpi){

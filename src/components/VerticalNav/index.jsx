@@ -39,8 +39,7 @@ const Icon = styled.img`
   align-items: center;
 `
 
-
-function VerticalNav() {
+const VerticalNav = () => {
     const sports = [yoga, swim, bike, strength]
     const sportsDOMElements = (sports.map((sport, index) => (
         <IconWrapper key={index}>

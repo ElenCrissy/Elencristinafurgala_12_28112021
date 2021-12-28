@@ -43,6 +43,15 @@ const Sessions = styled.div`
     opacity: 0.5;
   }
 `
+
+/**
+ * Returns DOM element of the Session Duration line chart
+ * @param { Object } data
+ * @param { Number } data.userId
+ * @param { Array.<{day : (String|Number), sessionLength: Number}> } data.sessions
+ * @return { JSX.Element }
+ */
+
 const SessionDuration = ({ data }) => {
     const sessions = data.sessions
     if(sessions != undefined){
