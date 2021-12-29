@@ -20,12 +20,14 @@ const DashboardContainer = styled.div`
 
 const DetailsContainer = styled.section`
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: space-between;
 `
 
 const Graphs = styled.div`
     width: 80%;
+    height: 100%;
     display: flex;
     flex-direction: column;
 `
@@ -37,11 +39,9 @@ const SmallGraphs = styled.div`
 
 const KpiElements = styled.div`
   width: 18%;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-content: space-between;
+  justify-content: space-between;
 `
 
 /**

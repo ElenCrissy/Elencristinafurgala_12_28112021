@@ -7,26 +7,26 @@ import PropTypes from "prop-types";
 
 const KpiContainer = styled.div`
   width: 100%;
-  height: 70px;
+  height: 90px;
   background-color: #FBFBFB;
   border-radius: 5px;
   padding: 10px;
-  margin-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   img{
-    width: 17px;
-    height: 17px;
-    padding: 10px;
+    width: 20px;
+    height: 20px;
+    padding: 15px;
     border-radius: 5px;
-    margin-left: 10px;
+    margin-left: 15px;
   }
 `
 const KpiWrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 10px;
+  margin-left: 5px;
   p{
     margin: 0px;
   }

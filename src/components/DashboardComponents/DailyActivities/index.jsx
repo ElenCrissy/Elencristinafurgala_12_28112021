@@ -23,6 +23,7 @@ const DailyInfoChart = styled.div`
     top: 10px;
     left: 10px;
     font-weight: bold;
+    margin: 10px 0 0 10px;
   }
 `
 const StyledTooltip = styled.div`
@@ -72,13 +73,12 @@ const DailyInfo = ({ data }) => {
             <p>Activité quotidienne</p>
             <ResponsiveContainer
                 width="100%"
-                height="80%"
+                height={250}
                 radius={5}
             >
                 <BarChart width="60%"
-                          height={300}
+                          height={240}
                           data={data}
-                          // padding={20}
                           margin={{ top: 40, right: 0, left: 30, bottom: 5 }}>
                     <CartesianGrid strokeDasharray="3 3" vertical={false}/>
                     <XAxis
@@ -93,14 +93,12 @@ const DailyInfo = ({ data }) => {
                         yAxisId={"kilo"}
                         dataKey="kilogram"
                         orientation="right"
-                        height={700}
                         axisLine={false}
                         tickLine={false}
                         tickCount ={4}/>
                     <YAxis
                         yAxisId={"calo"}
                         dataKey="calories"
-                        height={700}
                         orientation="left"
                         axisLine={false}
                         tickLine={false}
@@ -112,7 +110,7 @@ const DailyInfo = ({ data }) => {
                         align="right"
                         iconType={"circle"}
                         iconSize={7}
-                        height={50}
+                        height={10}
                         formatter={renderColorfulLegendText}
                         />
                     <Bar

@@ -27,10 +27,18 @@ const ScoreContainer = styled.div`
  */
 
 const Score = ({ data }) => {
-    let dataArray = [{
-        data,
-        max : 1
-    }]
+
+    const dataArray = [
+        {
+            scoreNumber : 1,
+            fill : 'white'
+        },
+        {
+            scoreNumber : data,
+            fill : 'red'
+        }
+    ]
+    console.log(dataArray)
 
     return(
         <ScoreContainer>
@@ -41,15 +49,19 @@ const Score = ({ data }) => {
                 innerRadius="10%"
                 outerRadius="80%"
                 data={dataArray}
-                startAngle={180}
+                startAngle={360}
                 endAngle={0}
                 style={{background:"#FBFBFB", borderRadius:"5px"}}
+                barCategoryGap="0%"
+                barSize={10}
             >
-                <RadialBar minAngle={15}
-                           label={{ fill: 'black', position: 'insideStart' }}
-                           style={{backgroundColor:"blue"}}
+                <RadialBar minAngle={0}
                            clockWise={true}
-                           dataKey='data' />
+                           dataKey='scoreNumber'
+                           innerRadius={10}
+                           outerRadius="20"
+                           style={{borderRadius: "5px"}}
+                />
                 {/*<Legend iconSize={10} width={120} height={140} layout='vertical' verticalAlign='middle' align="right" />*/}
                 <Tooltip />
             </RadialBarChart>
