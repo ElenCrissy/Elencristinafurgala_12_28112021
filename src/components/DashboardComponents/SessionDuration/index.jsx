@@ -8,17 +8,6 @@ import {
 } from "recharts";
 import PropTypes from "prop-types";
 
-const CustomTooltip = ({active, payload}) => {
-    if(active) {
-        return (
-            <StyledTooltip>
-                {payload[0].value} min
-            </StyledTooltip>
-        )
-    }
-    return null
-}
-
 const StyledTooltip = styled.div`
   width: 40px;
   height: 25px;
@@ -44,6 +33,28 @@ const Sessions = styled.div`
   }
 `
 
+const CustomTooltip = ({active, payload}) => {
+    if(active) {
+        return (
+            <StyledTooltip>
+                {payload[0].value} min
+            </StyledTooltip>
+        )
+    }
+    return null
+}
+
+const getSessions = (sessions) => {
+    if(sessions === undefined) return []
+    const days = ["L", "M", "M", "J", "V", "S", "D", ""]
+    return sessions.map(session => {
+            return {
+                ...session,
+                dayInitial: days[session.day-1]
+            }
+        })
+}
+
 /**
  * Returns DOM element of the Session Duration line chart
  * @param { Object } data
@@ -52,41 +63,17 @@ const Sessions = styled.div`
  * @return { JSX.Element }
  */
 
-const SessionDuration = ({ data }) => {
+const SessionDuration = (props) => {
+    console.log(props)
+    const {data} = props
     const sessions = data.sessions
-    if(sessions != undefined){
-        sessions.forEach(session => {
-            if(session.day === 1) {
-                return session.day = "L"
-            }
-            if(session.day === 2 || session.day === 3) {
-                return session.day = "M"
-            }
-            if(session.day === 4) {
-                return session.day = "J"
-            }
-            if(session.day === 5) {
-                return session.day = "V"
-            }
-            if(session.day === 6) {
-                return session.day = "S"
-            }
-            if(session.day === 7) {
-                return session.day = "D"
-            }
-            if(session.day === 8) {
-                return session.day = ""
-            }
-            return session
-        })
-    }
 
     return(
         <Sessions>
             <p>Durée moyenne des sessions</p>
             <LineChart width={235}
                        height={235}
-                       data={sessions}
+                       data={getSessions(sessions)}
                        margin={{ top: 40, right: 0, left: 0, bottom: 5 }}
                        radius={5}
                        style={{background: "#FF0000", borderRadius:"5px"}}>
@@ -96,7 +83,7 @@ const SessionDuration = ({ data }) => {
                         <stop offset="95%" stopColor="white" stopOpacity={0.8}/>
                     </linearGradient>
                 </defs>
-                <XAxis dataKey="day"
+                <XAxis dataKey="dayInitial"
                        tickLine={false}
                        axisLine={false}
                        tick={{stroke: 'white', fontSize: '7px'}}
@@ -122,8 +109,13 @@ const SessionDuration = ({ data }) => {
 }
 
 SessionDuration.propTypes = {
-    day: PropTypes.number,
-    sessionLength: PropTypes.number
+    data : PropTypes.shape({
+        userId : PropTypes.number,
+        sessions : PropTypes.arrayOf(PropTypes.shape({
+            day: PropTypes.number,
+            sessionLength: PropTypes.number,
+        }))
+    })
 }
 
 export default SessionDuration

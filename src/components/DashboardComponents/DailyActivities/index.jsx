@@ -57,15 +57,15 @@ const renderColorfulLegendText = (value) => {
 };
 
 /**
- * Returns DOM element of the DailyInfo bar chart
- * @param { Array.<{calories: Number, day: String, kilogram: Number}> } data
- * @param { String } data.calories
+ * Returns DOM element of the DailyActivities bar chart
+ * @param { Array } data
+ * @param { Number } data.calories
  * @param { String } data.day
  * @param { Number } data.kilogram
  * @return { JSX.Element }
  */
 
-const DailyInfo = ({ data }) => {
+const DailyActivities = ({ data }) => {
     const dataIndex = Array.from(data.keys())
     return(
         <DailyInfoChart>
@@ -78,7 +78,7 @@ const DailyInfo = ({ data }) => {
                 <BarChart width="60%"
                           // height={240}
                           data={data}
-                          margin={{ top: 40, right: 0, left: 30, bottom: 5 }}>
+                          margin={{ top: 90, right: 0, left: 30, bottom: 5 }}>
                     <CartesianGrid strokeDasharray="3 3" vertical={false}/>
                     <XAxis
                         data={dataIndex}
@@ -115,6 +115,7 @@ const DailyInfo = ({ data }) => {
                         iconSize={7}
                         height={40}
                         formatter={renderColorfulLegendText}
+                        wrapperStyle={{top: 20}}
                         // style={{position: "absolute", top:"0", right: "0"}}
                         />
                     <Bar
@@ -137,10 +138,12 @@ const DailyInfo = ({ data }) => {
     )
 }
 
-DailyInfo.propTypes = PropTypes.arrayOf(PropTypes.objectOf({
-        calories: PropTypes.number,
+DailyActivities.propTypes = {
+    data: PropTypes.arrayOf(PropTypes.shape({
+        calories: PropTypes.number.isRequired,
         day: PropTypes.string,
         kilogram: PropTypes.number
-}))
+    }))
+}
 
-export default DailyInfo
+export default DailyActivities

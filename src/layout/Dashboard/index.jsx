@@ -6,7 +6,7 @@ import useActivity from "../../services/activity";
 import usePerf from "../../services/performance";
 import useSessions from "../../services/sessions";
 import useScore from "../../services/score";
-import DailyInfo from "../../components/DashboardComponents/DailyActivities";
+import DailyActivities from "../../components/DashboardComponents/DailyActivities";
 import SessionDuration from "../../components/DashboardComponents/SessionDuration";
 import RadarGraph from "../../components/DashboardComponents/Radar";
 import Score from "../../components/DashboardComponents/Score";
@@ -66,7 +66,7 @@ const Dashboard = (props) => {
             <DashboardHeader userId={props.userId}/>
             <DetailsContainer>
                 <Graphs>
-                    <DailyInfo data={useActivity(props.userId)}/>
+                    <DailyActivities data={useActivity(props.userId)}/>
                     <SmallGraphs>
                         <SessionDuration data={useSessions(props.userId)}/>
                         <RadarGraph data={usePerf(props.userId)}/>

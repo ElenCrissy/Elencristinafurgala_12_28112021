@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import {
+    ResponsiveContainer,
     RadarChart,
     PolarGrid,
     PolarAngleAxis,
@@ -9,10 +10,6 @@ import {
     Label
 } from "recharts";
 import PropTypes from "prop-types";
-
-const RadarContainer = styled.div`
-  width: 35%;
-`
 
 /**
  * Returns DOM element of the RadarGraph bar chart
@@ -56,7 +53,7 @@ const RadarGraph = ({ data }) => {
     }
 
     return (
-        <RadarContainer>
+        <ResponsiveContainer width="30%" height={235}>
             <RadarChart
                 outerRadius={60}
                 width={235}
@@ -69,7 +66,7 @@ const RadarGraph = ({ data }) => {
                 <PolarRadiusAxis dataKey="value" angle={"none"} />
                 <Radar dataKey="value" legendType={"none"} fill="#FF0101" fillOpacity={0.7}/>
             </RadarChart>
-        </RadarContainer>
+        </ResponsiveContainer>
     )
 }
 
