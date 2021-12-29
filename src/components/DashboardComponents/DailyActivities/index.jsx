@@ -17,7 +17,6 @@ const DailyInfoChart = styled.div`
   background-color: #FBFBFB;
   border-radius: 5px;
   margin-bottom: 10px;
-  position: relative;
   p{
     position: relative;
     top: 10px;
@@ -77,7 +76,7 @@ const DailyInfo = ({ data }) => {
                 radius={5}
             >
                 <BarChart width="60%"
-                          height={240}
+                          // height={240}
                           data={data}
                           margin={{ top: 40, right: 0, left: 30, bottom: 5 }}>
                     <CartesianGrid strokeDasharray="3 3" vertical={false}/>
@@ -104,14 +103,15 @@ const DailyInfo = ({ data }) => {
                         tickLine={false}
                         hide={true}
                         />
-                    <Tooltip cursor={{fill: "rgba(196, 196, 196, 0.5)"}} content={<CustomTooltip/>}/>
+                    <Tooltip  cursor={{fill: 'grey'}} content={<CustomTooltip/>}/>
                     <Legend
                         verticalAlign="top"
                         align="right"
                         iconType={"circle"}
                         iconSize={7}
-                        height={10}
+                        height={40}
                         formatter={renderColorfulLegendText}
+                        // style={{position: "absolute", top:"0", right: "0"}}
                         />
                     <Bar
                         yAxisId={"kilo"}

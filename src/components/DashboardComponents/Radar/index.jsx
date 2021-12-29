@@ -6,7 +6,7 @@ import {
     PolarAngleAxis,
     PolarRadiusAxis,
     Radar,
-    LabelList,
+    Label
 } from "recharts";
 import PropTypes from "prop-types";
 
@@ -65,9 +65,7 @@ const RadarGraph = ({ data }) => {
                 style={{background: "#282D30", borderRadius:"5px", fill:"#FFF"}}
             >
                 <PolarGrid radialLines={false}/>
-                <PolarAngleAxis dataKey="kind" style={{fontSize: "12px"}}>
-                    <LabelList tickMargin={5}></LabelList>
-                </PolarAngleAxis>
+                <PolarAngleAxis dataKey="kind" style={{fontSize: "12px", margin: "3px"}}/>
                 <PolarRadiusAxis dataKey="value" angle={"none"} />
                 <Radar dataKey="value" legendType={"none"} fill="#FF0101" fillOpacity={0.7}/>
             </RadarChart>

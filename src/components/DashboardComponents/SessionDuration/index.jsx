@@ -85,7 +85,7 @@ const SessionDuration = ({ data }) => {
         <Sessions>
             <p>Durée moyenne des sessions</p>
             <LineChart width={235}
-                       height={200}
+                       height={235}
                        data={sessions}
                        margin={{ top: 40, right: 0, left: 0, bottom: 5 }}
                        radius={5}
@@ -101,10 +101,7 @@ const SessionDuration = ({ data }) => {
                        axisLine={false}
                        tick={{stroke: 'white', fontSize: '7px'}}
                        style={{opacity : 0.7}}
-                       interval="preserveStart"
-                >
-                    {/*<Label position="center"></Label>*/}
-                </XAxis>
+                       interval="preserveStart"/>
                 <CartesianGrid horizontal={false} vertical={false} strokeDasharray="3 3" />
                 <Tooltip
                          cursor={false}

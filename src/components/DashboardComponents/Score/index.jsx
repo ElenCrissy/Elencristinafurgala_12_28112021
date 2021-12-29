@@ -5,6 +5,7 @@ import {
     RadialBarChart,
     RadialBar,
     Tooltip,
+    Legend
 } from "recharts";
 
 const ScoreContainer = styled.div`
@@ -62,8 +63,6 @@ const Score = ({ data }) => {
                            outerRadius="20"
                            style={{borderRadius: "5px"}}
                 />
-                {/*<Legend iconSize={10} width={120} height={140} layout='vertical' verticalAlign='middle' align="right" />*/}
-                <Tooltip />
             </RadialBarChart>
         </ScoreContainer>
     )
