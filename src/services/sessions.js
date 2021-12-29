@@ -1,5 +1,11 @@
 import {useEffect, useState} from "react";
 
+/**
+ * Returns data about session duration line chart
+ * @param { Number } userId
+ * @return { Object.<{userId: Number, session: Array}> } sessions
+ */
+
 const useSessions = (userId) => {
     const [sessions, setSessions] = useState([])
 
@@ -17,7 +23,6 @@ const useSessions = (userId) => {
         setSessions(sessionsData)
 
     }, [])
-
 
     return sessions
 }

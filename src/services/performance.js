@@ -1,5 +1,11 @@
 import {useEffect, useState} from "react";
 
+/**
+ * Returns data about daily activities bar chart
+ * @param { Number } userId
+ * @return { Object.<{userId: Number, kind: Object, data: Array}> } perf
+ */
+
 const usePerf = (userId) => {
     const [perf, setPerf] = useState([])
 
@@ -11,7 +17,6 @@ const usePerf = (userId) => {
         setPerf(perfData)
 
     }, [])
-
     return perf
 }
 

@@ -1,5 +1,11 @@
 import {useEffect, useState} from "react";
 
+/**
+ * Returns data about kpi
+ * @param { Number } userId
+ * @return { Object.<{calorieCount : Number, proteinCount : Number, carbohydrateCount : Number, LipidCount : Number}> } kpi
+ */
+
 const useKpi = (userId) => {
     const [kpi, setKpi] = useState([])
 

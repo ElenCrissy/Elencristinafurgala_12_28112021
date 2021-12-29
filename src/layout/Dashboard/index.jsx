@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import DashboardHeader from "../../components/DashboardComponents/DashboardHeader";
-import Index from "../../components/DashboardComponents/Kpi"
+import KpiComponent from "../../components/DashboardComponents/Kpi/kpiComponent"
 import useKpi from "../../services/kpi";
 import useActivity from "../../services/activity";
 import usePerf from "../../services/performance";
@@ -35,7 +35,7 @@ const SmallGraphs = styled.div`
   justify-content: space-between;
 `
 
-const Kpi = styled.div`
+const KpiElements = styled.div`
   width: 18%;
   height: 100%;
   display: flex;
@@ -57,7 +57,7 @@ const Dashboard = (props) => {
     for(let i in kpi){
        const name = i
        const value = kpi[i]
-       const kpiDOM = (<Index kpiName={name} kpiValue={value}/>)
+       const kpiDOM = (<KpiComponent kpiName={name} kpiValue={value}/>)
        kpiDOMArray.push(kpiDOM)
     }
     const scoreData = useScore(props.userId)
@@ -73,9 +73,9 @@ const Dashboard = (props) => {
                         {scoreData === null || scoreData === undefined ? null : <Score data={scoreData.score}/>}
                     </SmallGraphs>
                 </Graphs>
-                <Kpi>
+                <KpiElements>
                     {kpiDOMArray}
-                </Kpi>
+                </KpiElements>
             </DetailsContainer>
         </DashboardContainer>
     )

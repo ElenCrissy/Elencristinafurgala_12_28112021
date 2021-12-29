@@ -41,14 +41,14 @@ const KpiWrapper = styled.div`
 `
 
 /**
- * Returns DOM element of Index
+ * Returns DOM element of a Kpi
  * @param { Object } props
  * @param { String } props.kpiName
  * @param { Number } props.kpiValue
  * @return { JSX.Element }
  */
 
-const Index = (props) => {
+const KpiComponent = (props) => {
     return(
         <KpiContainer>
             {props.kpiName === "calorieCount" ? (<img src={calories} alt="" style={{background: "rgb(255, 0, 0, 0.1)"}}/>) : null}
@@ -70,9 +70,9 @@ const Index = (props) => {
 
 }
 
-Index.propTypes = {
+KpiComponent.propTypes = {
     kpiName : PropTypes.string,
     kpiValue : PropTypes.number
 }
 
-export default Index
+export default KpiComponent

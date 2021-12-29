@@ -1,5 +1,11 @@
 import {useEffect, useState} from "react";
 
+/**
+ * Returns data about score radial bar chart
+ * @param { Number } userId
+ * @return { Object.<{id: Number, userInfos: Object, score: Number, keyData: Object}> } score
+ */
+
 const useScore = (userId) => {
     const [score, setScore] = useState(null)
 
@@ -12,7 +18,6 @@ const useScore = (userId) => {
         setScore(userData)
 
     }, [])
-
     return score
 }
 

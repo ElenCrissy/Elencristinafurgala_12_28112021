@@ -1,5 +1,11 @@
 import {useEffect, useState} from "react";
 
+/**
+ * Returns data about daily activities bar chart
+ * @param { Number } userId
+ * @return { Array.<{calories: Number, day: String, kilogram: Number}> } activity
+ */
+
 const useActivity = (userId) => {
     const [activity, setActivity] = useState([])
 
