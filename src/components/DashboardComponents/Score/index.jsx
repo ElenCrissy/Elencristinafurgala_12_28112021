@@ -28,7 +28,6 @@ const ScoreContainer = styled.div`
  */
 
 const Score = ({ data }) => {
-
     const dataArray = [
         {
             scoreNumber : 1,
@@ -39,7 +38,6 @@ const Score = ({ data }) => {
             fill : 'red'
         }
     ]
-    console.log(dataArray)
 
     return(
         <ScoreContainer>

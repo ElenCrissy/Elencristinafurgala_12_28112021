@@ -103,7 +103,11 @@ const DailyInfo = ({ data }) => {
                         tickLine={false}
                         hide={true}
                         />
-                    <Tooltip  cursor={{fill: 'grey'}} content={<CustomTooltip/>}/>
+                    <Tooltip
+                        cursor={{fill: 'red'}}
+                        content={<CustomTooltip/>}
+                        // onMouseOver={{backgroundColor: "blue"}}
+                    />
                     <Legend
                         verticalAlign="top"
                         align="right"

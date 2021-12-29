@@ -18,6 +18,7 @@ const useScore = (userId) => {
         setScore(userData)
 
     }, [])
+
     return score
 }
 
