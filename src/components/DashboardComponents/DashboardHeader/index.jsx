@@ -29,7 +29,7 @@ const DashboardHeader = (props) => {
 }
 
 DashboardHeader.protoTypes = {
-    userId : PropTypes.number
+    userId : PropTypes.number.isRequired
 }
 
 export default DashboardHeader

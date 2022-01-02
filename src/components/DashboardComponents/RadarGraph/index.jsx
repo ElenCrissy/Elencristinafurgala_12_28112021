@@ -61,9 +61,14 @@ const RadarGraph = ({ data }) => {
 }
 
 RadarGraph.propTypes = {
-    data: PropTypes.array,
-    kind: PropTypes.object,
-    userId: PropTypes.number
+    data : PropTypes.shape({
+        data: PropTypes.arrayOf(PropTypes.shape({
+            value : PropTypes.number.isRequired,
+            kind : PropTypes.string.isRequired
+        })),
+        kind: PropTypes.objectOf(PropTypes.string.isRequired),
+        userId: PropTypes.number.isRequired
+    })
 }
 
 export default RadarGraph

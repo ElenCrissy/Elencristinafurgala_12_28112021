@@ -64,8 +64,8 @@ const KpiComponent = (props) => {
 }
 
 KpiComponent.propTypes = {
-    kpiName : PropTypes.string,
-    kpiValue : PropTypes.number
+    kpiName : PropTypes.string.isRequired,
+    kpiValue : PropTypes.number.isRequired
 }
 
 export default KpiComponent

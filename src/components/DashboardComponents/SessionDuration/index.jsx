@@ -102,10 +102,10 @@ const SessionDuration = (props) => {
 
 SessionDuration.propTypes = {
     data : PropTypes.shape({
-        userId : PropTypes.number,
+        userId : PropTypes.number.isRequired,
         sessions : PropTypes.arrayOf(PropTypes.shape({
-            day: PropTypes.number,
-            sessionLength: PropTypes.number,
+            day: PropTypes.number.isRequired,
+            sessionLength: PropTypes.number.isRequired,
         }))
     })
 }
