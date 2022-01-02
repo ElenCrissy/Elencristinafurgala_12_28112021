@@ -40,13 +40,6 @@ const KpiWrapper = styled.div`
   }
 `
 
-/**
- * Returns DOM element of a Kpi
- * @param { Object } props
- * @param { String } props.kpiName
- * @param { Number } props.kpiValue
- * @return { JSX.Element }
- */
 
 const KpiComponent = (props) => {
     return(

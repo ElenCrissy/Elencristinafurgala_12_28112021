@@ -1,5 +1,3 @@
-import styled from "styled-components";
-
 import {
     ResponsiveContainer,
     RadarChart,
@@ -11,14 +9,6 @@ import {
 } from "recharts";
 import PropTypes from "prop-types";
 
-/**
- * Returns DOM element of the RadarGraph bar chart
- * @param { Object } data
- * @param { Number } data.userId
- * @param { Object } data.kind
- * @param { Array.<Object> } data.data
- * @return { JSX.Element }
- */
 
 const RadarGraph = ({ data }) => {
     const kinds = data.kind

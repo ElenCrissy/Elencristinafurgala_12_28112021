@@ -47,13 +47,13 @@ const VerticalNav = () => {
         </IconWrapper>
     )))
 
- return (
-     <VerticalNavContainer>
-      <VerticalNavWrapper>
-          {sportsDOMElements}
-      </VerticalNavWrapper>
-     </VerticalNavContainer>
- )
+     return (
+         <VerticalNavContainer>
+          <VerticalNavWrapper>
+              {sportsDOMElements}
+          </VerticalNavWrapper>
+         </VerticalNavContainer>
+     )
 }
 
 export default VerticalNav;

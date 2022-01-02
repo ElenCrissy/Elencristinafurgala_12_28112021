@@ -56,15 +56,6 @@ const renderColorfulLegendText = (value) => {
     return <span style={{color: "grey" }}>{value}</span>;
 };
 
-/**
- * Returns DOM element of the DailyActivities bar chart
- * @param { Array } data
- * @param { Number } data.calories
- * @param { String } data.day
- * @param { Number } data.kilogram
- * @return { JSX.Element }
- */
-
 const DailyActivities = ({ data }) => {
     const dataIndex = Array.from(data.keys())
     return(
@@ -76,7 +67,6 @@ const DailyActivities = ({ data }) => {
                 radius={5}
             >
                 <BarChart width="60%"
-                          // height={240}
                           data={data}
                           margin={{ top: 90, right: 0, left: 30, bottom: 5 }}>
                     <CartesianGrid strokeDasharray="3 3" vertical={false}/>
@@ -106,7 +96,6 @@ const DailyActivities = ({ data }) => {
                     <Tooltip
                         cursor={{fill: 'red'}}
                         content={<CustomTooltip/>}
-                        // onMouseOver={{backgroundColor: "blue"}}
                     />
                     <Legend
                         verticalAlign="top"
@@ -116,7 +105,6 @@ const DailyActivities = ({ data }) => {
                         height={40}
                         formatter={renderColorfulLegendText}
                         wrapperStyle={{top: 20}}
-                        // style={{position: "absolute", top:"0", right: "0"}}
                         />
                     <Bar
                         yAxisId={"kilo"}

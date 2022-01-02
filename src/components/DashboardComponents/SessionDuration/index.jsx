@@ -55,14 +55,6 @@ const getSessions = (sessions) => {
         })
 }
 
-/**
- * Returns DOM element of the Session Duration line chart
- * @param { Object } data
- * @param { Number } data.userId
- * @param { Array.<{day : (String|Number), sessionLength: Number}> } data.sessions
- * @return { JSX.Element }
- */
-
 const SessionDuration = (props) => {
     console.log(props)
     const {data} = props

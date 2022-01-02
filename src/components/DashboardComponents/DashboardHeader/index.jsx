@@ -17,16 +17,9 @@ const DashboardHeaderContainer = styled.div`
   }
 `
 
-/**
- * Returns DOM element of the DashboardHeader
- * @param { Object } props
- * @param { Number } props.userId
- * @return { JSX.Element }
- */
 
 const DashboardHeader = (props) => {
     const name = useUserFirstName(props.userId)
-
     return (
         <DashboardHeaderContainer>
             <h1>Bonjour <span>{name}</span></h1>

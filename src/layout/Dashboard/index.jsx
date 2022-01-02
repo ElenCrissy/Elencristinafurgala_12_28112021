@@ -8,7 +8,7 @@ import useSessions from "../../services/sessions";
 import useScore from "../../services/score";
 import DailyActivities from "../../components/DashboardComponents/DailyActivities";
 import SessionDuration from "../../components/DashboardComponents/SessionDuration";
-import RadarGraph from "../../components/DashboardComponents/Radar";
+import RadarGraph from "../../components/DashboardComponents/RadarGraph";
 import Score from "../../components/DashboardComponents/Score";
 import PropTypes from "prop-types";
 
@@ -43,13 +43,6 @@ const KpiElements = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `
-
-/**
- * Returns DOM element of the Dashboard
- * @param { Object } props
- * @param { Number } props.userId
- * @return { JSX.Element }
- */
 
 const Dashboard = (props) => {
    const kpi = useKpi(props.userId)

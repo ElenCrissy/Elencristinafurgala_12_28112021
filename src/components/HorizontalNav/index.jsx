@@ -26,7 +26,7 @@ const NavElement = styled.div`
   color: white;
 `
 
-function HorizontalNav() {
+const HorizontalNav = () => {
     return(
         <HorizontalNavContainer>
             <Logo src={logo} alt="" className="logo"/>
