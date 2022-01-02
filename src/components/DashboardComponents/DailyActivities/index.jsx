@@ -17,8 +17,9 @@ const DailyInfoChart = styled.div`
   background-color: #FBFBFB;
   border-radius: 5px;
   margin-bottom: 10px;
+  position: relative;
   p{
-    position: relative;
+    position: absolute;
     top: 10px;
     left: 10px;
     font-weight: bold;

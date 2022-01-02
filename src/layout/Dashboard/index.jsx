@@ -45,7 +45,8 @@ const KpiElements = styled.div`
 `
 
 const Dashboard = (props) => {
-   const kpi = useKpi(props.userId)
+    const kpi = useKpi(props.userId)
+    const scoreData = useScore(props.userId)
     let kpiDOMArray =[]
     for(let i in kpi){
        const name = i
@@ -53,7 +54,6 @@ const Dashboard = (props) => {
        const kpiDOM = (<KpiComponent kpiName={name} kpiValue={value}/>)
        kpiDOMArray.push(kpiDOM)
     }
-    const scoreData = useScore(props.userId)
     return (
         <DashboardContainer>
             <DashboardHeader userId={props.userId}/>
@@ -72,7 +72,6 @@ const Dashboard = (props) => {
             </DetailsContainer>
         </DashboardContainer>
     )
-
 }
 
 Dashboard.propTypes = {

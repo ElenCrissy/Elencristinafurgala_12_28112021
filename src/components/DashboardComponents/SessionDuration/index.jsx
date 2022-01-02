@@ -21,7 +21,7 @@ const StyledTooltip = styled.div`
 `
 
 const Sessions = styled.div`
-  width: 35%;
+  width: 30%;
   p{
     width: 100px;
     font-size: 14px;
@@ -56,7 +56,6 @@ const getSessions = (sessions) => {
 }
 
 const SessionDuration = (props) => {
-    console.log(props)
     const {data} = props
     const sessions = data.sessions
 
