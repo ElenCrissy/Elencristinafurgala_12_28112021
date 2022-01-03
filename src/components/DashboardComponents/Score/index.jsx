@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import {
     RadialBarChart,
     RadialBar,
-    Tooltip,
     Legend
 } from "recharts";
 
@@ -26,7 +25,7 @@ const Score = ({ data }) => {
     const dataArray = [
         {
             scoreNumber : 1,
-            fill : 'white'
+            fill : 'blue'
         },
         {
             scoreNumber : data,
@@ -41,20 +40,19 @@ const Score = ({ data }) => {
                 width={235}
                 height={235}
                 innerRadius="10%"
-                outerRadius="80%"
+                outerRadius="130%"
                 data={dataArray}
-                startAngle={360}
-                endAngle={0}
-                style={{background:"#FBFBFB", borderRadius:"5px"}}
+                startAngle={210}
+                endAngle={-210}
+                style={{background:"#FBFBFB", borderRadius: "5px"}}
                 barCategoryGap="0%"
                 barSize={10}
             >
-                <RadialBar minAngle={0}
-                           clockWise={true}
-                           dataKey='scoreNumber'
-                           innerRadius={10}
-                           outerRadius="20"
-                           style={{borderRadius: "5px"}}
+                <RadialBar
+                    minAngle={0}
+                   clockWise={true}
+                   dataKey='scoreNumber'
+                   cornerRadius="5"
                 />
             </RadialBarChart>
         </ScoreContainer>
