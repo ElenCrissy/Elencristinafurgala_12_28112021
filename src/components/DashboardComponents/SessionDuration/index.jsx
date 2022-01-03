@@ -79,11 +79,15 @@ const SessionDuration = (props) => {
                        axisLine={false}
                        tick={{stroke: 'white', fontSize: '7px'}}
                        style={{opacity : 0.7}}
-                       interval="preserveStart"/>
+                       interval="preserveStart"
+                       dx={10}
+                />
                 <CartesianGrid horizontal={false} vertical={false} strokeDasharray="3 3" />
                 <Tooltip
                          cursor={false}
-                         content={<CustomTooltip/>}/>
+                         content={<CustomTooltip/>}
+                         wrapperStyle={{top: 20}}
+                />
                 <Line
                     dot={false}
                     type="monotone"
