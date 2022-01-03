@@ -70,7 +70,11 @@ const DailyActivities = ({ data }) => {
                 <BarChart width="60%"
                           data={data}
                           margin={{ top: 90, right: 0, left: 30, bottom: 5 }}>
-                    <CartesianGrid strokeDasharray="3 3" vertical={false}/>
+                    <CartesianGrid
+                        strokeDasharray="3 3"
+                        vertical={false}
+                        verticalFill={"#9B9EAC"}
+                    />
                     <XAxis
                         data={dataIndex}
                        tickLine={false}
@@ -78,14 +82,20 @@ const DailyActivities = ({ data }) => {
                        scale="point"
                        padding={{ left: 9, right: 9 }}
                        fill="grey"
-                       interval="preserveStart"/>
+                       interval="preserveStart"
+                        dy={10}
+                        tick={{stroke: "#9B9EAC", fontSize: "12px"}}
+                    />
                     <YAxis
                         yAxisId={"kilo"}
                         dataKey="kilogram"
                         orientation="right"
                         axisLine={false}
                         tickLine={false}
-                        tickCount ={4}/>
+                        tickCount ={4}
+                        dx={10}
+                        tick={{stroke: "#9B9EAC", fontSize: "12px"}}
+                    />
                     <YAxis
                         yAxisId={"calo"}
                         dataKey="calories"

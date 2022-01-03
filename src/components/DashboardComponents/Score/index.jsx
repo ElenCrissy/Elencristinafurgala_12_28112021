@@ -53,7 +53,9 @@ const Score = ({ data }) => {
                    clockWise={true}
                    dataKey='scoreNumber'
                    cornerRadius="5"
+                    style={{background:"white"}}
                 />
+                {/*<Legend iconSize={10} width={120} height={140} layout='vertical' verticalAlign='middle' align="right" />*/}
             </RadialBarChart>
         </ScoreContainer>
     )
