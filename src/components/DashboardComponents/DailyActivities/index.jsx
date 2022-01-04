@@ -69,7 +69,7 @@ const DailyActivities = ({ data }) => {
             >
                 <BarChart width="60%"
                           data={data}
-                          margin={{ top: 90, right: 0, left: 30, bottom: 5 }}>
+                          margin={{ top: 50, right: 0, left: 30, bottom: 5 }}>
                     <CartesianGrid
                         strokeDasharray="3 3"
                         vertical={false}

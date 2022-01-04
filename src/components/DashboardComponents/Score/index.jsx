@@ -35,9 +35,7 @@ const Score = ({ data }) => {
     ]
 
     return(
-        <ResponsiveContainer
-            width="30%"
-        >
+        <ResponsiveContainer width="30%" height={235}>
             <ScoreContainer>
                 <p>Score</p>
                 <RadialBarChart

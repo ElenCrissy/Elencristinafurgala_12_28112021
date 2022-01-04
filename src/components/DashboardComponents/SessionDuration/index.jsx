@@ -61,8 +61,7 @@ const SessionDuration = (props) => {
     const sessions = data.sessions
 
     return(
-        <ResponsiveContainer width="30%">
-            <Sessions>
+        <Sessions>
             <p>Durée moyenne des sessions</p>
             <LineChart width={235}
                        height={235}
@@ -102,7 +101,6 @@ const SessionDuration = (props) => {
                 </Line>
             </LineChart>
         </Sessions>
-        </ResponsiveContainer>
     )
 }
 
