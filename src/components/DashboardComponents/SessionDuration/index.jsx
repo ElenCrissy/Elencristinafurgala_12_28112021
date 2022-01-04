@@ -5,6 +5,7 @@ import {
     CartesianGrid,
     Tooltip,
     Line,
+    ResponsiveContainer
 } from "recharts";
 import PropTypes from "prop-types";
 
@@ -60,7 +61,8 @@ const SessionDuration = (props) => {
     const sessions = data.sessions
 
     return(
-        <Sessions>
+        <ResponsiveContainer width="30%">
+            <Sessions>
             <p>Durée moyenne des sessions</p>
             <LineChart width={235}
                        height={235}
@@ -100,6 +102,7 @@ const SessionDuration = (props) => {
                 </Line>
             </LineChart>
         </Sessions>
+        </ResponsiveContainer>
     )
 }
 

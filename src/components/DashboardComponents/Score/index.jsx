@@ -4,11 +4,12 @@ import PropTypes from "prop-types";
 import {
     RadialBarChart,
     RadialBar,
-    Legend
+    Legend,
+    ResponsiveContainer
 } from "recharts";
 
 const ScoreContainer = styled.div`
-  width: 30%;
+  width: 100%;
   position: relative;
   p{
     position: absolute;
@@ -34,30 +35,34 @@ const Score = ({ data }) => {
     ]
 
     return(
-        <ScoreContainer>
-            <p>Score</p>
-            <RadialBarChart
-                width={235}
-                height={235}
-                innerRadius="10%"
-                outerRadius="130%"
-                data={dataArray}
-                startAngle={210}
-                endAngle={-210}
-                style={{background:"#FBFBFB", borderRadius: "5px"}}
-                barCategoryGap="0%"
-                barSize={10}
-            >
-                <RadialBar
-                    minAngle={0}
-                   clockWise={true}
-                   dataKey='scoreNumber'
-                   cornerRadius="5"
-                    style={{background:"white"}}
-                />
-                {/*<Legend iconSize={10} width={120} height={140} layout='vertical' verticalAlign='middle' align="right" />*/}
-            </RadialBarChart>
-        </ScoreContainer>
+        <ResponsiveContainer
+            width="30%"
+        >
+            <ScoreContainer>
+                <p>Score</p>
+                <RadialBarChart
+                    width={235}
+                    height={235}
+                    innerRadius="10%"
+                    outerRadius="130%"
+                    data={dataArray}
+                    startAngle={210}
+                    endAngle={-210}
+                    style={{background:"#FBFBFB", borderRadius: "5px"}}
+                    barCategoryGap="0%"
+                    barSize={10}
+                >
+                    <RadialBar
+                        minAngle={0}
+                        clockWise={true}
+                        dataKey='scoreNumber'
+                        cornerRadius="5"
+                        style={{backgroundColor:"white"}}
+                    />
+                </RadialBarChart>
+            </ScoreContainer>
+        </ResponsiveContainer>
+
     )
 }
 
