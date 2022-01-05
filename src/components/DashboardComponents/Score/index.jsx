@@ -9,7 +9,7 @@ import {
 } from "recharts";
 
 const ScoreContainer = styled.div`
-  width: 100%;
+  width: 30%;
   position: relative;
   p{
     position: absolute;
@@ -35,31 +35,32 @@ const Score = ({ data }) => {
     ]
 
     return(
-        <ResponsiveContainer width="30%" height={235}>
+
             <ScoreContainer>
                 <p>Score</p>
-                <RadialBarChart
-                    width={235}
-                    height={235}
-                    innerRadius="10%"
-                    outerRadius="130%"
-                    data={dataArray}
-                    startAngle={210}
-                    endAngle={-210}
-                    style={{background:"#FBFBFB", borderRadius: "5px"}}
-                    barCategoryGap="0%"
-                    barSize={10}
-                >
-                    <RadialBar
-                        minAngle={0}
-                        clockWise={true}
-                        dataKey='scoreNumber'
-                        cornerRadius="5"
-                        style={{backgroundColor:"white"}}
-                    />
-                </RadialBarChart>
+                <ResponsiveContainer>
+                    <RadialBarChart
+                        width={235}
+                        height={235}
+                        innerRadius="10%"
+                        outerRadius="130%"
+                        data={dataArray}
+                        startAngle={210}
+                        endAngle={-210}
+                        style={{background:"#FBFBFB", borderRadius: "5px"}}
+                        barCategoryGap="0%"
+                        barSize={10}
+                    >
+                        <RadialBar
+                            minAngle={0}
+                            clockWise={true}
+                            dataKey='scoreNumber'
+                            cornerRadius="5"
+                            style={{backgroundColor:"white"}}
+                        />
+                    </RadialBarChart>
+                </ResponsiveContainer>
             </ScoreContainer>
-        </ResponsiveContainer>
 
     )
 }

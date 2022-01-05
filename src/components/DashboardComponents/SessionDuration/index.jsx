@@ -63,43 +63,45 @@ const SessionDuration = (props) => {
     return(
         <Sessions>
             <p>Durée moyenne des sessions</p>
-            <LineChart width={235}
-                       height={235}
-                       data={getSessions(sessions)}
-                       margin={{ top: 40, right: 0, left: 0, bottom: 5 }}
-                       radius={5}
-                       style={{background: "#FF0000", borderRadius:"5px"}}>
-                <defs>
-                    <linearGradient id="colorLine" >
-                        <stop offset="0%" stopColor="white" stopOpacity={0.4}/>
-                        <stop offset="95%" stopColor="white" stopOpacity={0.8}/>
-                    </linearGradient>
-                </defs>
-                <XAxis dataKey="dayInitial"
-                       tickLine={false}
-                       axisLine={false}
-                       tick={{stroke: 'white', fontSize: '7px'}}
-                       style={{opacity : 0.7}}
-                       interval="preserveStart"
-                       dx={10}
-                />
-                <CartesianGrid horizontal={false} vertical={false} strokeDasharray="3 3" />
-                <Tooltip
-                         cursor={false}
-                         content={<CustomTooltip/>}
-                         wrapperStyle={{top: 20}}
-                />
-                <Line
-                    dot={false}
-                    type="monotone"
-                    dataKey="sessionLength"
-                    stroke="url(#colorLine)"
-                    strokeWidth={2}
-                    fillOpacity={1}
-                    fill="none"
-                    layout={"vertical"}>
-                </Line>
-            </LineChart>
+            <ResponsiveContainer>
+                <LineChart width={235}
+                           height={235}
+                           data={getSessions(sessions)}
+                           margin={{ top: 40, right: 0, left: 0, bottom: 5 }}
+                           radius={5}
+                           style={{background: "#FF0000", borderRadius:"5px"}}>
+                    <defs>
+                        <linearGradient id="colorLine" >
+                            <stop offset="0%" stopColor="white" stopOpacity={0.4}/>
+                            <stop offset="95%" stopColor="white" stopOpacity={0.8}/>
+                        </linearGradient>
+                    </defs>
+                    <XAxis dataKey="dayInitial"
+                           tickLine={false}
+                           axisLine={false}
+                           tick={{stroke: 'white', fontSize: '7px'}}
+                           style={{opacity : 0.7}}
+                           interval="preserveStart"
+                           dx={10}
+                    />
+                    <CartesianGrid horizontal={false} vertical={false} strokeDasharray="3 3" />
+                    <Tooltip
+                        cursor={false}
+                        content={<CustomTooltip/>}
+                        wrapperStyle={{top: 20}}
+                    />
+                    <Line
+                        dot={false}
+                        type="monotone"
+                        dataKey="sessionLength"
+                        stroke="url(#colorLine)"
+                        strokeWidth={2}
+                        fillOpacity={1}
+                        fill="none"
+                        layout={"vertical"}>
+                    </Line>
+                </LineChart>
+            </ResponsiveContainer>
         </Sessions>
     )
 }
