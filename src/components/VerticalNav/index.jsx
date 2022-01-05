@@ -11,6 +11,7 @@ const VerticalNavContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   background-color: black;
+  position: relative;
 `
 
 const VerticalNavWrapper = styled.nav`
@@ -39,6 +40,16 @@ const Icon = styled.img`
   align-items: center;
 `
 
+const Credits = styled.div`
+  font-size: 12px;
+  position: absolute;
+  bottom: 30px;
+  color: white;
+  writing-mode: vertical-rl;
+  left: 50%;
+  transform: rotate(180deg) translateX(-50%);
+`
+
 const VerticalNav = () => {
     const sports = [yoga, swim, bike, strength]
     const sportsDOMElements = (sports.map((sport, index) => (
@@ -51,6 +62,7 @@ const VerticalNav = () => {
          <VerticalNavContainer>
           <VerticalNavWrapper>
               {sportsDOMElements}
+              <Credits>Copyright, SportSee 2020</Credits>
           </VerticalNavWrapper>
          </VerticalNavContainer>
      )
