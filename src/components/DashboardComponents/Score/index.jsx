@@ -23,10 +23,14 @@ const ScoreContainer = styled.div`
 
 const Thing = styled.div`
   position: absolute;
-  top: 10px;
+  width: 61%;
+  height: 61%;
+  top: 19%;
+  left: 50%;
   color: black;
   background-color: white;
   border-radius: 50%;
+  transform: translate(-50%);
 `
 
 
@@ -57,20 +61,19 @@ const Score = ({ data }) => {
                         data={dataArray}
                         startAngle={210}
                         endAngle={-210}
-                        style={{background:"#FBFBFB", borderRadius: "5px"}}
-                        barCategoryGap="0%"
+                        style={{background:"#FBFBFB", borderRadius: "5px", stroke: 'white', strokeWidth: 2}}
                         barSize={10}
+                        barGap={{background:"white"}}
                     >
                         <RadialBar
                             minAngle={0}
                             clockWise={true}
                             dataKey='scoreNumber'
                             cornerRadius="5"
-                            style={{backgroundColor:"white"}}
                         />
                     </RadialBarChart>
                 </ResponsiveContainer>
-                <Thing>{goalPercentage}% de votre objectif</Thing>
+                {/*<Thing></Thing>*/}
             </ScoreContainer>
 
     )
