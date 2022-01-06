@@ -21,6 +21,14 @@ const ScoreContainer = styled.div`
   }
 `
 
+const Thing = styled.div`
+  position: absolute;
+  top: 10px;
+  color: black;
+  background-color: white;
+  border-radius: 50%;
+`
+
 
 const Score = ({ data }) => {
     const dataArray = [
@@ -33,6 +41,8 @@ const Score = ({ data }) => {
             fill : 'red'
         }
     ]
+    const goalPercentage = data*100
+    console.log(goalPercentage)
 
     return(
 
@@ -60,6 +70,7 @@ const Score = ({ data }) => {
                         />
                     </RadialBarChart>
                 </ResponsiveContainer>
+                <Thing>{goalPercentage}% de votre objectif</Thing>
             </ScoreContainer>
 
     )

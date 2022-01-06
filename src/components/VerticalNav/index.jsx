@@ -18,6 +18,7 @@ const VerticalNavWrapper = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   margin: auto;
 `
 
@@ -46,8 +47,7 @@ const Credits = styled.div`
   bottom: 30px;
   color: white;
   writing-mode: vertical-rl;
-  left: 50%;
-  transform: rotate(180deg) translateX(-50%);
+  transform: rotate(180deg);
 `
 
 const VerticalNav = () => {
