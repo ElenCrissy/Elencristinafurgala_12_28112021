@@ -22,7 +22,7 @@ const ScoreContainer = styled.div`
   }
 `
 
-const Thing = styled.div`
+const CircleBackground = styled.div`
   position: absolute;
   width: 135px;
   height: 135px;
@@ -32,6 +32,20 @@ const Thing = styled.div`
   background-color: white;
   border-radius: 50%;
   transform: translateX(-50%) translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+const InfoText = styled.div`
+  width: 50%;
+  font-size: 17px;
+  text-align: center;
+  color:  #74798C;
+  span{
+    font-weight: bold;
+    color: black;
+  }
 `
 
 
@@ -74,7 +88,13 @@ const Score = ({ data }) => {
                         />
                     </RadialBarChart>
                 </ResponsiveContainer>
-                <Thing><p>{goalPercentage}% de votre objectif</p></Thing>
+
+                <CircleBackground>
+                    <InfoText>
+                        <span>{goalPercentage}%</span>
+                        <br/> de votre objectif
+                    </InfoText>
+                </CircleBackground>
             </ScoreContainer>
 
     )

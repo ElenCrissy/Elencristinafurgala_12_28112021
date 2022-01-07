@@ -127,7 +127,7 @@ const DailyActivities = ({ data }) => {
                     <Bar
                         yAxisId={"calo"}
                         dataKey="calories"
-                        name="Calories (kCal)"
+                        name="Calories brûlées (kCal)"
                         fill="#E60000"
                         radius={[5, 5, 0, 0]}
                         barSize={7}/>
