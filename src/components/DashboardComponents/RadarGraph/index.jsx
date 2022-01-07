@@ -43,11 +43,11 @@ const RadarGraph = ({ data }) => {
     }
 
     return (
-        <ResponsiveContainer width="30%" height={235}>
+        <ResponsiveContainer width="32%" height={230}>
             <RadarChart
-                outerRadius={60}
-                width={235}
-                height={235}
+                outerRadius={50}
+                width={200}
+                height={200}
                 data={perfValues}
                 style={{background: "#282D30", borderRadius:"5px", fill:"#FFF"}}
             >

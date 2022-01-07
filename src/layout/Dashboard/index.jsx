@@ -13,7 +13,7 @@ import Score from "../../components/DashboardComponents/Score";
 import PropTypes from "prop-types";
 
 const DashboardContainer = styled.div`
-  width: 80%;
+  width: 85%;
   margin: 0 auto;
   height: 97%;
 `
@@ -22,17 +22,18 @@ const DetailsContainer = styled.section`
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 `
 
 const Graphs = styled.div`
-    width: 80%;
+    width: 78%;
     height: 100%;
     display: flex;
     flex-direction: column;
 `
 
 const SmallGraphs = styled.div`
+  width: 100%;
   display: flex;
   justify-content: space-between;
 `

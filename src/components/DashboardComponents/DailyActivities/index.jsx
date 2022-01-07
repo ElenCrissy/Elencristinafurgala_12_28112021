@@ -13,10 +13,10 @@ import PropTypes from "prop-types";
 
 const DailyInfoChart = styled.div`
   width: 100%;
-  height: 300px;
+  height: 280px;
   background-color: #FBFBFB;
   border-radius: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   position: relative;
   p{
     position: absolute;

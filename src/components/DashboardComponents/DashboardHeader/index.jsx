@@ -3,6 +3,7 @@ import useUserFirstName from "../../../services/users";
 import PropTypes from "prop-types";
 
 const DashboardHeaderContainer = styled.div`
+  margin-bottom: 40px;
   h1{
     font-size: 35px;
     margin-bottom: auto;

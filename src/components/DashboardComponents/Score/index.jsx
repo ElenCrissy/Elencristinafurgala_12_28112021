@@ -9,7 +9,8 @@ import {
 } from "recharts";
 
 const ScoreContainer = styled.div`
-  width: 30%;
+  //width: 32%;
+  height: 230px;
   position: relative;
   p{
     position: absolute;
@@ -23,14 +24,14 @@ const ScoreContainer = styled.div`
 
 const Thing = styled.div`
   position: absolute;
-  width: 61%;
-  height: 61%;
-  top: 19%;
+  width: 135px;
+  height: 135px;
+  top: 50%;
   left: 50%;
   color: black;
   background-color: white;
   border-radius: 50%;
-  transform: translate(-50%);
+  transform: translateX(-50%) translateY(-50%);
 `
 
 
@@ -52,10 +53,10 @@ const Score = ({ data }) => {
 
             <ScoreContainer>
                 <p>Score</p>
-                <ResponsiveContainer>
+                <ResponsiveContainer width={230} height={230}>
                     <RadialBarChart
-                        width={235}
-                        height={235}
+                        width={230}
+                        height={230}
                         innerRadius="10%"
                         outerRadius="130%"
                         data={dataArray}
@@ -73,7 +74,7 @@ const Score = ({ data }) => {
                         />
                     </RadialBarChart>
                 </ResponsiveContainer>
-                {/*<Thing></Thing>*/}
+                <Thing><p>{goalPercentage}% de votre objectif</p></Thing>
             </ScoreContainer>
 
     )
