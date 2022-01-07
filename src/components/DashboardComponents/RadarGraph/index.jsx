@@ -5,7 +5,6 @@ import {
     PolarAngleAxis,
     PolarRadiusAxis,
     Radar,
-    Label
 } from "recharts";
 import PropTypes from "prop-types";
 
@@ -43,9 +42,9 @@ const RadarGraph = ({ data }) => {
     }
 
     return (
-        <ResponsiveContainer width="32%" height={230}>
+        <ResponsiveContainer width="31%" height={230}>
             <RadarChart
-                outerRadius={50}
+                outerRadius={48}
                 width={200}
                 height={200}
                 data={perfValues}

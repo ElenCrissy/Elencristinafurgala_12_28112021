@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import {
     RadialBarChart,
     RadialBar,
-    Legend,
     ResponsiveContainer
 } from "recharts";
 
@@ -24,8 +23,8 @@ const ScoreContainer = styled.div`
 
 const CircleBackground = styled.div`
   position: absolute;
-  width: 135px;
-  height: 135px;
+  width: 62%;
+  height: 62%;
   top: 50%;
   left: 50%;
   color: black;
@@ -39,10 +38,11 @@ const CircleBackground = styled.div`
 
 const InfoText = styled.div`
   width: 50%;
-  font-size: 17px;
+  font-size: 15px;
   text-align: center;
   color:  #74798C;
   span{
+    font-size: 17px;
     font-weight: bold;
     color: black;
   }
@@ -61,7 +61,6 @@ const Score = ({ data }) => {
         }
     ]
     const goalPercentage = data*100
-    console.log(goalPercentage)
 
     return(
 

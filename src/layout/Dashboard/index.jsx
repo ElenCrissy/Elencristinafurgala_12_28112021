@@ -52,7 +52,7 @@ const Dashboard = (props) => {
     for(let i in kpi){
        const name = i
        const value = kpi[i]
-       const kpiDOM = (<KpiComponent kpiName={name} kpiValue={value}/>)
+       const kpiDOM = (<KpiComponent key={name} kpiName={name} kpiValue={value}/>)
        kpiDOMArray.push(kpiDOM)
     }
     return (

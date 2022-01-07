@@ -54,7 +54,7 @@ const CustomTooltip = ({active, payload}) => {
 }
 
 const renderColorfulLegendText = (value) => {
-    return <span style={{color: "grey" }}>{value}</span>;
+    return <span style={{color: "grey", fontSize: "14px"}}>{value}</span>;
 };
 
 const DailyActivities = ({ data }) => {

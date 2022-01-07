@@ -22,7 +22,7 @@ const StyledTooltip = styled.div`
 `
 
 const Sessions = styled.div`
-  width: 32%;
+  width: 31%;
   height: 230px;
   p{
     width: 100px;
