@@ -7,7 +7,11 @@ import {useEffect, useState} from "react";
  */
 
 const useActivity = (userId) => {
-    const [activity, setActivity] = useState([])
+    const [activity, setActivity] = useState([{
+        calories: 0,
+        day: '',
+        kilogram: 0
+    }])
 
     useEffect( () => {
         async function fetchData() {

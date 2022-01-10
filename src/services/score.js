@@ -7,7 +7,9 @@ import {useEffect, useState} from "react";
  */
 
 const useScore = (userId) => {
-    const [score, setScore] = useState(null)
+    const [score, setScore] = useState({
+        score : 0
+    })
 
     useEffect(  () => {
         async function fetchData(){

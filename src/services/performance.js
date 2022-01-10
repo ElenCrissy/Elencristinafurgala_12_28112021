@@ -7,7 +7,11 @@ import {useEffect, useState} from "react";
  */
 
 const usePerf = (userId) => {
-    const [perf, setPerf] = useState([])
+    const [perf, setPerf] = useState({
+        userId: userId,
+        kind: {},
+        data: []
+    })
 
     useEffect(  () => {
         async function fetchData() {

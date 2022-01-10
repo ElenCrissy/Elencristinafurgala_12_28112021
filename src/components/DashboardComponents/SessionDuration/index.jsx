@@ -103,7 +103,7 @@ const SessionDuration = (props) => {
                         layout={"vertical"}>
                     </Line>
                 </LineChart>
-                {/*<ReferenceArea />*/}
+                {/*<ReferenceArea x1={150} x2={180} y1={200} y2={300} stroke="black" strokeOpacity={0.3} />*/}
             </ResponsiveContainer>
         </Sessions>
     )
