@@ -19,7 +19,7 @@ const usePerf = (userId) => {
         }
         fetchData()
 
-    }, [])
+    }, [userId])
     return perf
 }
 

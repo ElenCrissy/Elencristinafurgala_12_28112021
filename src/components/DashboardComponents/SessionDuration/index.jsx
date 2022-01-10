@@ -5,7 +5,8 @@ import {
     CartesianGrid,
     Tooltip,
     Line,
-    ResponsiveContainer
+    ResponsiveContainer,
+    ReferenceArea
 } from "recharts";
 import PropTypes from "prop-types";
 
@@ -102,6 +103,7 @@ const SessionDuration = (props) => {
                         layout={"vertical"}>
                     </Line>
                 </LineChart>
+                {/*<ReferenceArea />*/}
             </ResponsiveContainer>
         </Sessions>
     )

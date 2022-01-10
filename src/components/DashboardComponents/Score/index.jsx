@@ -77,7 +77,6 @@ const Score = ({ data }) => {
                         endAngle={-210}
                         style={{background:"#FBFBFB", borderRadius: "5px", stroke: 'white', strokeWidth: 2}}
                         barSize={10}
-                        barGap={{background:"white"}}
                     >
                         <RadialBar
                             minAngle={0}

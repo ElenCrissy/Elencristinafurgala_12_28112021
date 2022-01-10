@@ -20,7 +20,7 @@ const useScore = (userId) => {
         fetchData()
 
 
-    }, [])
+    }, [userId])
 
     return score
 }

@@ -1,5 +1,4 @@
 import {useEffect, useState} from "react";
-import {func} from "prop-types";
 
 /**
  * Returns data about session duration line chart
@@ -8,7 +7,10 @@ import {func} from "prop-types";
  */
 
 const useSessions = (userId) => {
-    const [sessions, setSessions] = useState([])
+    const [sessions, setSessions] = useState({
+        userId : userId,
+        sessions: []
+    })
 
     useEffect(   () => {
         async function fetchData(){
@@ -26,7 +28,7 @@ const useSessions = (userId) => {
         }
         fetchData()
 
-    }, [])
+    }, [userId])
 
     return sessions
 }

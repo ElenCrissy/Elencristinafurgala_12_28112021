@@ -19,7 +19,7 @@ const useActivity = (userId) => {
         }
         fetchData()
 
-    }, [])
+    }, [userId])
 
     return activity
 }

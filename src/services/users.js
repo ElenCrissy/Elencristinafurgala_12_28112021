@@ -21,7 +21,7 @@ const useUserFirstName = (userId) => {
         }
         fetchData()
 
-    }, [])
+    }, [userId])
 
     return userFirstName
 }

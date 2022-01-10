@@ -19,7 +19,7 @@ const useKpi = (userId) => {
         }
         fetchData()
 
-    }, [])
+    }, [userId])
 
     return kpi
 }
