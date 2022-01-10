@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import {
     RadialBarChart,
     RadialBar,
-    ResponsiveContainer
 } from "recharts";
 
 const ScoreContainer = styled.div`
@@ -19,6 +18,11 @@ const ScoreContainer = styled.div`
     font-weight: bold;
     font-size: 16px;
   }
+`
+
+const ChartContainer = styled.div`
+  width: 230px;
+  height: 230px;
 `
 
 const CircleBackground = styled.div`
@@ -66,7 +70,7 @@ const Score = ({ data }) => {
 
             <ScoreContainer>
                 <p>Score</p>
-                <ResponsiveContainer width={230} height={230}>
+                <ChartContainer>
                     <RadialBarChart
                         width={230}
                         height={230}
@@ -85,7 +89,7 @@ const Score = ({ data }) => {
                             cornerRadius="5"
                         />
                     </RadialBarChart>
-                </ResponsiveContainer>
+                </ChartContainer>
 
                 <CircleBackground>
                     <InfoText>
