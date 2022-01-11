@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import {
+    ResponsiveContainer,
     LineChart,
     XAxis,
     CartesianGrid,
     Tooltip,
     Line,
-    ResponsiveContainer,
-    ReferenceArea
+    ReferenceArea, YAxis
 } from "recharts";
 import PropTypes from "prop-types";
 
@@ -92,6 +92,7 @@ const SessionDuration = (props) => {
                         content={<CustomTooltip/>}
                         wrapperStyle={{top: 20}}
                     />
+                    <ReferenceArea x1={3} x2={6}  ></ReferenceArea>
                     <Line
                         dot={false}
                         type="monotone"
@@ -103,7 +104,6 @@ const SessionDuration = (props) => {
                         layout={"vertical"}>
                     </Line>
                 </LineChart>
-                {/*<ReferenceArea x1={150} x2={180} y1={200} y2={300} stroke="black" strokeOpacity={0.3} />*/}
             </ResponsiveContainer>
         </Sessions>
     )
