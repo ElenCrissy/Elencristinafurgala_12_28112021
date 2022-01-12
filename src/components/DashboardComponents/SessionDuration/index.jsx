@@ -47,21 +47,19 @@ const CustomTooltip = ({active, payload}) => {
     return null
 }
 
-const ReferenceBand = (props : any) => {
-    const { x } = props;
+const ReferenceBand = (props) => {
+    const cx = props.cx
+    const cy = props.cy
     return (
-        <g>
-                <rect
-                    x={x}
-                    y={0}
-                    width={30}
-                    height="100%"
-                    fill={"black"}
-                    fillOpacity={0.3}
-                />
-            ))}
-        </g>
-    );
+        <rect
+            x={cx}
+            y={cy*0}
+            width="100%"
+            height="100%"
+            fill={"black"}
+            fillOpacity={0.2}
+        />
+    )
 }
 
 const getSessions = (sessions) => {
@@ -108,9 +106,7 @@ const SessionDuration = (props) => {
                         cursor={false}
                         content={<CustomTooltip/>}
                         wrapperStyle={{top: 20}}
-                    >
-                    </Tooltip>
-                    <ReferenceArea shape={<ReferenceBand/>}/>
+                    />
                     <Line
                         dot={false}
                         type="monotone"
@@ -119,7 +115,9 @@ const SessionDuration = (props) => {
                         strokeWidth={2}
                         fillOpacity={1}
                         fill="none"
-                        layout={"vertical"}>
+                        layout={"vertical"}
+                        activeDot={<ReferenceBand/>}
+                    >
                     </Line>
                 </LineChart>
             </ResponsiveContainer>

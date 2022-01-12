@@ -27,7 +27,7 @@ const RadarGraph = ({ data }) => {
             }
         }
         const valuesAndKind = newData.data
-        perfValues = valuesAndKind.map(element => {
+        const array = valuesAndKind.map(element => {
             for(let i in newData.newKinds) {
                 if(element.kind.toString() === i) {
                     element.kind = newData.newKinds[i]
@@ -35,8 +35,8 @@ const RadarGraph = ({ data }) => {
             }
             return element
         })
-        // console.log(array)
-        // perfValues = []
+        console.log(array)
+        perfValues = []
         return perfValues
     }
 
