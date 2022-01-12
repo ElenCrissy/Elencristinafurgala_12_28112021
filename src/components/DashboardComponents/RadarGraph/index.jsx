@@ -35,7 +35,8 @@ const RadarGraph = ({ data }) => {
             }
             return element
         })
-        console.log(perfValues)
+        // console.log(array)
+        // perfValues = []
         return perfValues
     }
 

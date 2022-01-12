@@ -47,6 +47,23 @@ const CustomTooltip = ({active, payload}) => {
     return null
 }
 
+const ReferenceBand = (props : any) => {
+    const { x } = props;
+    return (
+        <g>
+                <rect
+                    x={x}
+                    y={0}
+                    width={30}
+                    height="100%"
+                    fill={"black"}
+                    fillOpacity={0.3}
+                />
+            ))}
+        </g>
+    );
+}
+
 const getSessions = (sessions) => {
     if(sessions === undefined) return []
     const days = ["L", "M", "M", "J", "V", "S", "D", ""]
@@ -91,8 +108,9 @@ const SessionDuration = (props) => {
                         cursor={false}
                         content={<CustomTooltip/>}
                         wrapperStyle={{top: 20}}
-                    />
-                    <ReferenceArea x1={3} x2={6}  ></ReferenceArea>
+                    >
+                    </Tooltip>
+                    <ReferenceArea shape={<ReferenceBand/>}/>
                     <Line
                         dot={false}
                         type="monotone"
