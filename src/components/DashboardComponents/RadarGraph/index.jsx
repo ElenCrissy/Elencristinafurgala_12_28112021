@@ -10,43 +10,28 @@ import PropTypes from "prop-types";
 
 
 const RadarGraph = ({ data }) => {
-    let perfValues
-    if(data === undefined) {
-        perfValues = []
-    }
+    let perfValues = []
     if(data !== undefined) {
-        const newData = {
-            ...data,
-            newKinds : {
-                1 : "Cardio",
-                2 : "Energie",
-                3 : "Endurance",
-                4 : "Force",
-                5 : "Vitesse",
-                6 : "Intensité"
-            }
+        const newKinds = {
+            1 : "Cardio",
+            2 : "Energie",
+            3 : "Endurance",
+            4 : "Force",
+            5 : "Vitesse",
+            6 : "Intensité"
         }
-        const valuesAndKind = newData.data
-        const array = valuesAndKind.map(element => {
-            for(let i in newData.newKinds) {
-                if(element.kind.toString() === i) {
-                    element.kind = newData.newKinds[i]
-                }
+        perfValues = data.data.map(element => {
+            return {
+                value : element.value,
+                kind : newKinds[element.kind]
             }
-            return element
         })
-        console.log(array)
-        perfValues = []
-        return perfValues
     }
-
 
     return (
         <ResponsiveContainer width="31%" height={230} >
             <RadarChart
                 outerRadius={48}
-                // width={200}
-                // height={200}
                 data={perfValues}
                 style={{background: "#282D30", borderRadius:"5px", fill:"#FFF"}}
             >

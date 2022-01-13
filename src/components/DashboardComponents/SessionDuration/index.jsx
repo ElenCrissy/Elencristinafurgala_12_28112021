@@ -47,13 +47,11 @@ const CustomTooltip = ({active, payload}) => {
     return null
 }
 
-const ReferenceBand = (props) => {
-    const cx = props.cx
-    const cy = props.cy
+const ReferenceBand = ({ cx }) => {
     return (
         <rect
             x={cx}
-            y={cy*0}
+            y={0}
             width="100%"
             height="100%"
             fill={"black"}
