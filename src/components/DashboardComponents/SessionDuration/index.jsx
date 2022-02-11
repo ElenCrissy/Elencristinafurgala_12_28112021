@@ -6,7 +6,6 @@ import {
     CartesianGrid,
     Tooltip,
     Line,
-    ReferenceArea, YAxis
 } from "recharts";
 import PropTypes from "prop-types";
 

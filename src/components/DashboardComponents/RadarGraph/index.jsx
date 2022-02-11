@@ -10,6 +10,7 @@ import PropTypes from "prop-types";
 
 
 const RadarGraph = ({ data }) => {
+    console.log(data)
     let perfValues = []
     if(data !== undefined) {
         const newKinds = {
