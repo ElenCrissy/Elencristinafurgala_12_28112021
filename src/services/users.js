@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 
 /**
- * Returns data about daily activities bar chart
+ * Returns user's first name
  * @param { Number } userId
  * @return { String } userFirstName
  */

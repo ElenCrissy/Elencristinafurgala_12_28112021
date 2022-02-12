@@ -24,7 +24,7 @@ const DashboardHeader = (props) => {
     return (
         <DashboardHeaderContainer>
             <h1>Bonjour <span>{name}</span></h1>
-            <p>Félicitations ! Vous avez explosé vos objectifs d'hier</p>
+            <p>Félicitations ! Vous avez explosé vos objectifs d'hier !</p>
         </DashboardHeaderContainer>
     )
 }
