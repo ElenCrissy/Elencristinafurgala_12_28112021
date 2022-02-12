@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 /**
  * Returns data about daily activities bar chart
  * @param { Number } userId
- * @return { String }> } userFirstName
+ * @return { String } userFirstName
  */
 
 const useUserFirstName = (userId) => {

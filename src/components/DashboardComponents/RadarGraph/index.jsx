@@ -28,21 +28,23 @@ const RadarGraph = ({ data }) => {
             }
         })
     }
+    if(data.data.length){
+        return (
+            <ResponsiveContainer width="31%" height={230} >
+                <RadarChart outerRadius={48}
+                            data={perfValues}
+                            style={{background: "#282D30", borderRadius:"5px", fill:"#FFF"}}>
+                    <PolarGrid radialLines={false}/>
+                    <PolarAngleAxis dataKey="kind" style={{fontSize: "12px"}}/>
+                    <PolarRadiusAxis dataKey="value" angle={"none"} />
+                    <Radar dataKey="value" legendType={"none"} fill="#FF0101" fillOpacity={0.7}/>
+                </RadarChart>
+            </ResponsiveContainer>
+        )
+    } else {
+        return null
+    }
 
-    return (
-        <ResponsiveContainer width="31%" height={230} >
-            <RadarChart
-                outerRadius={48}
-                data={perfValues}
-                style={{background: "#282D30", borderRadius:"5px", fill:"#FFF"}}
-            >
-                <PolarGrid radialLines={false}/>
-                <PolarAngleAxis dataKey="kind" style={{fontSize: "12px"}}/>
-                <PolarRadiusAxis dataKey="value" angle={"none"} />
-                <Radar dataKey="value" legendType={"none"} fill="#FF0101" fillOpacity={0.7}/>
-            </RadarChart>
-        </ResponsiveContainer>
-    )
 }
 
 RadarGraph.propTypes = {

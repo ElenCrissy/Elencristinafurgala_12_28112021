@@ -5,7 +5,7 @@ import bike from "../../assets/bike.png";
 import strength from "../../assets/strength.png";
 
 const VerticalNavContainer = styled.div`
-  height: 780px;
+  height: 690px;
   width: 90px;
   display: flex;
   flex-direction: column;

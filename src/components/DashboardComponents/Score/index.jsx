@@ -67,38 +67,35 @@ const Score = ({ data }) => {
     const goalPercentage = data*100
 
     return(
-
-            <ScoreContainer>
-                <p>Score</p>
-                <ChartContainer>
-                    <RadialBarChart
-                        width={230}
-                        height={230}
-                        innerRadius="10%"
-                        outerRadius="130%"
-                        data={dataArray}
-                        startAngle={210}
-                        endAngle={-210}
-                        style={{background:"#FBFBFB", borderRadius: "5px", stroke: 'white', strokeWidth: 2}}
-                        barSize={10}
-                    >
-                        <RadialBar
-                            minAngle={0}
-                            clockWise={true}
-                            dataKey='scoreNumber'
-                            cornerRadius="5"
-                        />
-                    </RadialBarChart>
-                </ChartContainer>
-
-                <CircleBackground>
-                    <InfoText>
-                        <span>{goalPercentage}%</span>
-                        <br/> de votre objectif
-                    </InfoText>
-                </CircleBackground>
-            </ScoreContainer>
-
+        <ScoreContainer>
+            <p>Score</p>
+            <ChartContainer>
+                <RadialBarChart
+                    width={230}
+                    height={230}
+                    innerRadius="10%"
+                    outerRadius="130%"
+                    data={dataArray}
+                    startAngle={210}
+                    endAngle={-210}
+                    style={{background:"#FBFBFB", borderRadius: "5px", stroke: 'white', strokeWidth: 2}}
+                    barSize={10}
+                >
+                    <RadialBar
+                        minAngle={0}
+                        clockWise={true}
+                        dataKey='scoreNumber'
+                        cornerRadius="5"
+                    />
+                </RadialBarChart>
+            </ChartContainer>
+            <CircleBackground>
+                <InfoText>
+                    <span>{goalPercentage}%</span>
+                    <br/> de votre objectif
+                </InfoText>
+            </CircleBackground>
+        </ScoreContainer>
     )
 }
 

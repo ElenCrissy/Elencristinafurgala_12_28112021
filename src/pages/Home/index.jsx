@@ -5,7 +5,7 @@ import HorizontalNav from "../../components/HorizontalNav";
 
 const HomeWrapper = styled.div`
   width: 100%;
-  height: 800px;
+  height: 780px;
 `
 
 const Wrapper = styled.div`
