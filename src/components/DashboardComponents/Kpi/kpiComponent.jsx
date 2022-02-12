@@ -53,7 +53,7 @@ const KpiComponent = (props) => {
                 <p>{props.kpiValue}{props.kpiName === "calorieCount" ? "kCal" : "g"}</p>
                 <p>
                     {props.kpiName === "calorieCount" ? "Calories" : null}
-                    {props.kpiName === "proteinCount" ? "Lipides" : null}
+                    {props.kpiName === "proteinCount" ? "Protéines" : null}
                     {props.kpiName === "carbohydrateCount" ? "Glucides" : null}
                     {props.kpiName === "lipidCount" ? "Lipides" : null}
                 </p>
