@@ -21,7 +21,7 @@ const useActivity = (userId) => {
             const perfTest = data.data.sessions
             setActivity(perfTest)
         }
-        fetchData()
+        fetchData().catch(err => console.log(err))
 
     }, [userId])
 

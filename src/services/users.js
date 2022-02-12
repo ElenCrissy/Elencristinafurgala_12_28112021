@@ -19,7 +19,7 @@ const useUserFirstName = (userId) => {
             const userData = data.data.userInfos
             setUserFirstName(userData.firstName)
         }
-        fetchData()
+        fetchData().catch(err => console.log(err))
 
     }, [userId])
 

@@ -26,7 +26,7 @@ const useSessions = (userId) => {
             sessionsDuration.push(newData)
             setSessions(sessionsData)
         }
-        fetchData()
+        fetchData().catch(err => console.log(err))
 
     }, [userId])
 

@@ -19,7 +19,7 @@ const useScore = (userId) => {
             const userData = data.data
             setScore(userData)
         }
-        fetchData()
+        fetchData().catch(err => console.log(err))
 
 
     }, [userId])

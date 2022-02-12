@@ -21,7 +21,7 @@ const usePerf = (userId) => {
             const perfData = data.data
             setPerf(perfData)
         }
-        fetchData()
+        fetchData().catch(err => console.log(err))
 
     }, [userId])
     return perf

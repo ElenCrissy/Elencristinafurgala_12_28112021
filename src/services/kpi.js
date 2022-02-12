@@ -17,7 +17,7 @@ const useKpi = (userId) => {
             const kpiTest = data.data.keyData
             setKpi(kpiTest)
         }
-        fetchData()
+        fetchData().catch(err => console.log(err))
 
     }, [userId])
 
